@@ -1,0 +1,20 @@
+= Evil User Stories
+Enseigner la programmation
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc: left
+:toclevels: 2
+:numbered:
+:imagesdir: images
+
+
+include::preface.adoc[]
+
+include::evil-user-stories.adoc[]
+
+include::conclusion.adoc[]
+
+include::glossary.adoc[]
+
+

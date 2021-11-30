@@ -1,0 +1,407 @@
+:imagesdir: images
+
+== Une sélection d'Evil User Stories 
+
+
+=== Team :  _Le nain et l'échelle_
+
+
+[sidebar]
+.Evil User Story 1
+--
+En tant que personne malveillante, je souhaite obtenir les données de connexion à la base de données utilisée par l'application Vetux-Line, en vue d'exploiter des données d'autres bases de données hébergées sur le même serveur que Vetux-Line.
+--
+
+*Contre-mesure concept* :  _principe du moindre privilège_
+
+
+*Contre-mesure* : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d'accéderà d'autres bases de données sur le même serveur. 
+Pour cela avec `phpMyAdmin` je crée ce nouvel utilisateur comme ceci:
+
+image::phpmyadmin-create-user.png[]
+
+
+Et dans le fichier `.env` je précise les informations de connexion à la base de données avec cette ligne:
+
+[source, php]
+----
+
+    DATABASE_URL="mysql://vetux_line:wNgEf23m*7MZdWZ9@127.0.0.1:3306/vetux_line?serverVersion=mariadb-10.4.21"
+----
+
+.Mise en garde
+[WARNING]
+====
+L'utilisation de solutions d'administration de base de données par l'intermédiaire d'un tiers applicatif comme `phpmyadmin` est à éviter si possible, car cette pratique va à l'encontre du principe de *_réduction de la surface d'attaque_*. 
+
+Préférez une console d'administration, connexion en `SSH`,  directement sur le serveur de production, utilisant des solutions `CLI`.
+====
+
+
+[sidebar]
+.Evil User Story 2
+--
+En tant que personne malveillante, je cherche accéder à certaines pages sans authentification, dans le but d'avoir accès aux actions et aux données permises à certains rôles seulement.
+--
+
+*Contre-mesure concept* :  _principe du moindre privilège_
+
+
+*Contre-mesure*: En tant que développeur, je veux restreindre l'accès à certaines pages à des utilisateurs ayant un rôle spécifique, afin d'éviter qu'un utilisateur malveillant ait accès aux actions et données de ces rôles. Pour cela je configure dans le fichier `security.yaml` les lignes de `acces_control`:
+
+----
+access_control:
+   - { path: ^/utilisateur, roles: ROLE_GESTIONNAIRE }
+   - { path: ^/utilisateur/admin, roles: ROLE_ADMIN }         
+   - { path: ^/home, roles: ROLE_GESTIONNAIRE }
+----
+
+Ainsi, toutes les routes commençant par `/utilisateur/admin` seront uniquemant accessibles par les utilisateurs avec le rôle `ROLE_ADMIN` et de même pour les routes commençant par `/home` pour les utilisateurs avec le rôle `ROLE_GESTIONNAIRE`.
+
+
+Dans les contrôleurs de l'application, je définie un préfixe de route pour toutes ses méthodes contrôleur. Par exemple dans `UtilisateurController.php` j'utilise une annotation pour définir la racine de route `utilisateur`, propre à cette classe et valable pour toutes ses méthodes contrôleur :
+
+[source, php]
+----
+#[Route('/utilisateur')]
+class UtilisateurController extends AbstractController
+----
+
+Ainsi les méthodes contrôleur de cette classe ayant une route commençant par `/admin`, ne seront accessibles qu'aux utilisateurs ayant le rôle `ROLE_ADMIN`.
+
+La classe `UploadController.php` aura `/home` comme préfixe de route.
+
+[source, php]
+----
+#[Route('/home')]
+class UploadController extends AbstractController
+
+----
+
+Ainsi, toutes ses méthodes contrôleur seront accessibles qu'aux seules utilisateur ayant le `ROLE_GESTIONNAIRE`. 
+
+[sidebar]
+.Evil User Story 3
+--
+En tant que personne malveillante, je veux uploader des fichiers pour faire planter le serveur ou le hacker.
+--
+
+*Contre-mesure concept* :  _ne pas diffuser de données techniques d'erreur_, _ne jamais faire confiance aux données d'entrée._ 
+
+*Contre-mesure* : En tant que développeur, je veux seulement autoriser les fichiers `csv` dans l'upload pour éviter des attaques malveillantes. Pour cela j'interviens dans la classe contrôleur `UploadController.php` afin de vérifier le type de chaque fichier reçu :
+
+//// 
+https://github.com/asciidocfx/AsciidocFX/issues/226 
+////
+
+
+[source, php, numbered]
+----
+ foreach ($files as $file)  {
+   $filetype = $file->getMimeType();
+   if (str_contains($filetype, '/csv')){
+     $filename = $file->getClientOriginalName();
+     $uploader->moveTo($uploadDir, $file, $filename);
+   } else {
+     return $this->render('home/index.html.twig');
+   }
+ }
+----
+        
+`getMimeType()` renvoie le type de fichier avec son extension sous forme: `type/extension`.
+
+Ici on vérifie juste si dans cette réception on a bien l'extension `csv` via un appel à `str_contains` et si oui on récupère le nom du fichier et on le traite (avec notre objet service référencé par `$uploader`), sinon on renvoie à la page d'upload.
+
+Nos fichiers `csv` ont comme MimeType `application/csv` et pas `text/csv`, on a donc dû vérifier seulement la présence de l'extension.
+
+
+.Attention, solution naïve : l'habit ne fait pas le moine
+[CAUTION]
+====
+L'extension informe sur le contenu d'un fichier mais ne le garantit pas. La preuve : le changement d'extension du nom d'un fichier est sans impact sur son contenu.
+
+La limite de la taille maximale des fichiers autorisés est également à considérer. Généralement sous la forme d'un paramètre du service HTTP en amont.
+====
+
+
+
+=== Team : _Les Pas d'ID_
+
+[sidebar]
+.Evil User Story 4
+--
+En tant qu’utilisateur malveillant je veux empecher l’accès au site en faisant une attaque par déni de service (<<DDos>>) pour réduire la productivité du service en question.
+--
+
+*Contre-mesure concept* : Menaces <<DDoS>> à intégrer dans le plan de mise en production.
+
+
+*Contre-mesure* : En tant que développeur pour empêcher les attaques dos je m'assure que l'application n'utilise des composants sujets à de telles attaques et je me sers des protections mis a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)
+
+
+.Exemple hébergeur OVH
+[NOTE]
+====
+
+Ci-dessous, des extraits de courrier envoyé par OVH à un de ses clients suite à la détectection une attaque <<DDoS>>. 
+
+.Message de l'hébergeur OVH ayant détecté une attaque DDoS
+----
+                                                                   
+Madame, Monsieur,
+
+Nous venons de détecter une attaque sur l'adresse IP x.x.x.x.
+
+Afin de protéger votre infrastructure, nous avons aspiré votre
+traffic sur notre infrastructure de mitigation.
+
+Toute l'attaque sera ainsi filtrée par notre infrastructure, et seul
+le traffic légitime arrivera jusqu'à vos serveurs.
+
+A la fin de l'attaque, votre infrastructure sera immédiatement retirée de la mitigation.
+----
+
+Puis, quelque temps plus tard :
+                             
+
+.Message de l'hébergeur OVH ayant détecté la fin de l'attaque 
+----
+Madame, Monsieur,
+
+Nous ne détectons actuellement plus d'attaque sur l'adresse IP x.x.x.x.
+
+Votre infrastructure est maintenant retirée de notre mitigation. 
+
+Pour plus d'informations sur l'infrastructure de mitigation OVH : https://www.ovh.com/fr/anti-ddos/
+
+Cordialement,
+
+Votre Service client OVHcloud
+----
+
+====
+
+
+
+=== Team :  _Yannick_
+
+
+[sidebar]
+.Evil User Story 5
+--
+En tant que personne malveillante, je veux utiliser la barre d'adresse afin d'avoir accès aux différentes routes de l'application Vetux-line sans avoir besoin de me connecter.
+--
+
+*Contre-mesure* : En tant que développeur, afin d'empêcher les personnes malveillantes qui souhaitent, à partir de la barre d'adresse, accéder aux différentes routes de l'application Vetux-Line sans être connecté.
+
+Les méthodes contrôleur de la classe `IndexController` sont annotatiée par `@IsGranted("ROLE_ADMIN")`. Cette annotation permet de restreindre l'accès à tous les utilisateurs qui ne sont pas connecté ou qui ne possède pas le rôle `ROLE_ADMIN` aux différentes routes du controller. La personne malveillante, en essayant de se connecter à la route admin/fusion par exemple, ne va pas pouvoir y accéder, car elle sera directement redirigée sur la page de connexion.
+
+Vidéo de démonstration : https://youtu.be/DO1L1NVX6XI
+
+
+.Symfony security
+[NOTE]
+--
+Avec `symfony` la gestion des habilitations peut être réalisée :
+
+* Par configuration (`security.yaml`)
+* Par annotations (de niveau classe ou méthode)
+* Par instructions dans le corps des méthodes
+
+--
+
+
+=== Team : _Schoolalexis_
+
+
+[sidebar]
+.Evil User Story 6
+--
+En tant que personne malveillante, je veux avoir accès aux données de connexion à la base de données afin d'exploiter les mots de passes et autres données.
+--
+
+*Contre-mesure* : En tant que développeur, afin d'empêcher des personnes malveillantes qui souhaitent, à partir de la base de données, se connecter aux comptes des utilisateurs et exploiter leurs mots de passe (dans le cas de l'application Vetux Line), je sécurise le fichier `.env` qui contient l'identifiant de connexion à la base de données.
+
+Pour cela, je n'inscris pas de données sensibles dans `.env` (données de production), et je crée un fichier `.env.local` pour y placer des données en lien avec l'environnement de test (machine du dev par exemple). Je m'assure que ce fichier n'est pas pris en compte dans le logiciel de versionnage `Git`, pour ne pas être sauvegardé sur un serveur distant.
+
+Exemple :
+
+.gitignore
+[source, git]
+--
+ 
+#  symfony/framework-bundle #
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+#  symfony/framework-bundle #
+--
+
+Dans `.env` j'inscris :
+
+[source]
+--
+DATABASE_URL="mysql://<user>:<password>@127.0.0.1:3306/<database>?serverVersion=<version>"
+--
+
+À charge de la personne responsable de la mise en production de renseigner les données de connexion à la base de données dans le fichier de configuration `.env`.
+
+
+.sécuriser les données de configuration
+[NOTE]
+--
+
+Une autre solution consiste à chiffrer les variables d'environnement.
+[quote, https://symfony.com/doc/current/configuration.html#configuration-based-on-environment-variables, Symfony]
+____
+Instead of defining a real environment variable or adding it to a .env file, if the value of a variable is sensitive (e.g. an API key or a database password), you can encrypt the value using the secrets management system.
+____
+
+https://symfony.com/doc/current/configuration/secrets.html
+--
+
+
+=== Team : _Les Alternants_
+
+[sidebar]
+.Evil User Story 7
+--
+En tant que personne malveillante j’ai découvert que Vetux-Line utilise une ancienne version de Symfony qui n'est pas à jour. Je vais donc me documenter sur les failles de cette ancienne version, en vue de les exploiter.
+--
+
+*Contre-mesure* : En tant que développeur je surveille les mises à jour de Symfony, particulièrement en terme de sécurité (site `https://symfony.com/`), ainsi que les autres composants tiers utilisés par mon projet, en exécutant cette commande :
+
+[source, bash]
+----
+symfony self:update
+----
+
+puis
+
+[source, bash]
+----
+composer update
+----
+
+
+Je réalise cette commande supplémentaire pour vérifier qu’il n’y a pas d’autres failles de sécurité en exécutant cette commande :
+
+[source, bash]
+----
+symfony security:check
+----
+
+Pour vérifier que les composants dont dépend l'application n’ont pas de failles détectées à ce jour. Si nécessaire je mets à jour la version des composants en prenant soin de bien tester l'application (tests de non régression)
+
+
+[sidebar]
+.Evil User Story 8
+--
+En tant que personne malveillante si j'arrive à extraire les données des utilisateurs de l'application, je compte utiliser leur identité et leur mot de passe pour accèder à d'autres applications. 
+--
+
+*Justification*: En effet, plusieurs études (https://www.cyclonis.com/fr/rapport-83-pour-cent-utilisateurs-interroges-utilisent-meme-mot-de-passe-plusieurs-sites/ ou https://www.zdnet.fr/actualites/mot-de-passe-1-personne-sur-7-n-en-utilise-qu-un-seul-partout-39829024.htm et bien d’autres..) démontrent que les personnes utilisent souvent le même mot de passe un peu partout.
+ 
+
+*Contre-mesure* : En tant que développeur, si jamais une grosse fuite de données arriverait à se produire, j’ai sécurisé la base de données en chiffrant tous les mots de passe pour éviter de réutiliser les mots de passe des utilisateurs.
+
+J’ai donc haché le mot de passe des utilisateurs par l'intermédiaire du module de sécurité de Symfony, en particulier :
+
+[source, php]
+----
+use
+Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
+[...]
+
+----
+
+
+
+=== Team : _Tournesol_
+
+
+[sidebar]
+.Evil User Story 9
+--
+En tant que utilisateur malveillant si j'arrive à accèder à des données d'autres utilisatueurs de même privilège, je peux alors aspirer leurs données en vue d'exploitations illégales, ou pire, endommager les données pour discréditer le service.  
+--
+
+*Concepts* : <<defense-en-profondeur>>, <<zero-trust>>, <<moindre-privilege>>
+
+
+*Exemple connu Optical Center avril 2019* (utilisateur sans privilège !) : 
+_Une délégation de la CNIL a effectué des vérifications en ligne qui ont permis de constater qu'il était possible d’accéder librement, à partir des « URL » qui lui avaient été transmises, à des factures contenant les données à caractère personnel suivantes: le nom, le prénom, l’adresse postale, la correction ophtalmologique et, pour certaines d'entre elles, la date de naissance des clients ainsi que leur numéro d'inscription au répertoire national d’identification des personnes physiques (NIR). La délégation a également constaté qu'il était possible, depuis le domaine « optical-center.fr » et sans authentification préalable dans l'espace client, d'exporter au format « CSV », un échantillon de 2085 fichiers correspondant, après suppression des doublons, aux données de 1207 clients et faisant notamment apparaître 158 NIR._ La société Optical Center a eu une amende de 250 000 euros (source : https://www.cnil.fr/sites/default/files/atoms/files/decision-n-422575.pdf)
+
+
+*Contre-mesure* : En tant que développeur, je m'assure que les utilisateurs de même privilège n'accèdent pas aux fonctionnalités leur permettant d'agir sur les données personnelles d'autes utilisateurs de même privilège.
+
+
+.Exemple de trou de sécurité
+[source, php]
+----
+ /**
+  * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_GESTIONNAIRE')")
+  * 
+  * @Route("/{id}/edit", name="utilisateur_edit", methods={"GET","POST"})
+  */
+  public function edit(Request $request, Utilisateur $utilisateur, 
+                       UserPasswordHasherInterface $passwordHasher): Response
+  {
+   
+   // code sous garde de sécurité qui manque de "robustesse"
+
+   [...]
+    
+  }    
+----
+
+Une solution consiste à affiner, dans le corps de la méthode, l'habilitation de l'utilisateur à solliciter ce service. 
+
+.Exemple d'une correction possible
+[source, php]
+----
+ /**
+  * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_GESTIONNAIRE')")
+  * 
+  * @Route("/{id}/edit", name="utilisateur_edit", methods={"GET","POST"})
+  */
+  public function edit(Request $request, Utilisateur $utilisateur, 
+                       UserPasswordHasherInterface $passwordHasher, 
+                       LoggerInterface $logger): Response
+  {
+    $isAdmin = $this->isGranted('ROLE_ADMIN');<1>
+    if (($this->getUser()->getUserIdentifier() !== $utilisateur->getUserIdentifier())
+      && !$isAdmin)  { <2>
+      // un utilisateur ne peut pas modifier/consulter les données
+      // d'un autre, sauf s'il est ADMIN
+      $logger->info('This user '. $this->getUser()->getUserIdentifier()   <3>
+        . ' hack attempt edit user id : ' . $utilisateur->->getUserIdentifier());
+      $this->addFlash("message", "Vous ne pouvez pas modifier cet utilisateur"); <4>
+      return $this->redirectToRoute('membre'); <5>
+    }
+    [...]
+----
+
+<1> Vérifier si l'utilisateur courant est un administrateur
+<2> Seuls l'utilisateur concerné ou les administrateurs sont elligibles ici
+<3> journalise cette action non autorisée (TODO vérifier sa temporalisation)
+<4> Est-il opportun de présenter un message à cet utilisateur ?
+<5> Retourne un ordre de redirection, car cette requête n'a pas lieu d'être.
+
+.Journalisation
+[TIP]
+--
+On remarquera l'instruction de journalisation (_logger_) de l'action malveillante. 
+
+Très utile pour analyser des attaques silencieuses.
+
+La généralisation de journalisation de toutes actions illégales est à envisager (_zero trust_)
+
+--
+
+

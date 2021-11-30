@@ -1,0 +1,29 @@
+[glossary]
+== Glossaire
+
+[[EvilUS]]Evil User Story::
+  Récit d'un utilisateur (_User Story_) mal intentionné, connu aussi sous le nom _abuser story_.
+
+[[DDoS]]Deni de service::
+  Une attaque par déni de service vise à rendre indisponible un ou plusieurs services par surcharge de la bande passante ou épuisement des ressources système.
+  "_Certaines attaques visent à épuiser les capacités de traitement d’une cible. Par exemple, un attaquant peut chercher à atteindre la limite du nombre de connexions concurrentes qu’un serveur web peut traiter. Dans ce cas, l’attaquant envoie en permanence un grand nombre de requêtes HTTP GET ou POST au serveur ciblé. Il est également possible d’envoyer des requêtes partielles, puis de transmettre la suite de ces requêtes à intervalles réguliers, dans le but de maintenir les connexions ouvertes le plus longtemps possible et d’éviter la fermeture des connexions au-delà d’un délai fixé.   D’autres types d’attaques applicatives cherchent à épuiser les ressources de calcul d’un serveur en initiant un grand nombre de sessions TLS, ou encore à tirer parti de faiblesses dans la conception d’une application web_"
+  Source : https://www.ssi.gouv.fr/uploads/2015/03/NP_Guide_DDoS.pdf
+  
+ [[CLI]]Ligne de commande::
+ _Une interface en ligne de commande (en anglais command line interface, couramment abrégé `CLI`) est une interface homme-machine dans laquelle la communication entre l'utilisateur et l'ordinateur s'effectue en mode texte._ source : https://fr.wikipedia.org/wiki/Interface_en_ligne_de_commande
+ 
+[[mitigation]]Mitigation::
+  _La mitigation concerne les moyens et mesures mis en place pour atténuer les effets négatifs sur un serveur ou un service liés aux attaques DDoS. La mitigation consiste à filtrer le flux pour ne laisser passer que le trafic légitime._
+  source : https://www.ovh.com/fr/anti-ddos/mitigation.xml
+  
+[[zero-trust]]Zero-Trust::
+   _Le modèle Zero Trust s’inscrit dans la logique de « défense en profondeur » promue historiquement par l’ANSSI, il constitue une modification du paradigme de la stricte logique périmétrique qui a longtemps prévalu._ Mise en garde l'ANSSI : https://www.ssi.gouv.fr/agence/publication/le-modele-zero-trust/
+   
+[[moindre-privilege]]Principe de moinde privilège::
+  _Ce principe vise à n’octroyer aux éléments et acteurs du système que les permissions strictement nécessaires pour fonctionner, ceci aﬁn de limiter le risque de vol, d’altération ou de destruction de données dans le cas de compromission d’un ou plusieurs éléments._ (ANSSI)
+  
+[[defense-en-profondeur]]Défense en profondeur::
+  Technique qui consite à ne pas laisser une seule couche de sécurité gérer le parfeu de sécurité. En développement logiciel, cela consiste à munir certaines briques logicielles de contrôles suplémentaires de sécurité.
+ 
+ 
+à compléter...

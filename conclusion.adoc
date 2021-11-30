@@ -1,0 +1,41 @@
+ifndef::imagesdir[]
+:imagesdir: images
+endif::[]
+
+== Conclusion
+
+Cette première expérimentation (première année d'examen du nouveau référentiel SIO) a permi de mesurer la difficulté à enseigner les principes de cybersécurité à des débutants en programmation. Les propositions d'étudiants présentées ici ont, en partie, été reformulées, mais restent relativement fidèles à leur version originale. 
+
+Seule la proposition de la team _Tournesol_ n'est pas une proposition d'étudiant. Malgré le fait que le cas _Optical Center_ ait été vu en cours, au même titre, mais plus fin, que la faiblesse du code généré par le module _maker_ d'authentification (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l'utilisateur). Nous pensons que cette proposition n'a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un recul basé sur une expérience en devenir. 
+
+La cybersécurité en développement logiciel (défense) nécessite un esprit d'analyse fort qui s'appuie essentiellement sur une connaissance fine des technologies mises en oeuvre (infrastructures, protocoles, architectures des tiers, architectures en couches...). Cette connaissance se forge par l'expérience. 
+
+Enseigner la cybersécurité à BAC+2, à des débutants, c'est accompagner l'étudiant sur le chemin de l'expérience et en même temps l'éclairer à la fois sur les bonnes pratiques et les usages déviants.
+
+Seulement, l'étudiant a tendance à se focaliser principalement sur la consolidation de connaissances informatiques nouvelles (comprendre la technologie, mettre au point l'application) laissant malheureusement peu de place à l'étude de bonnes pratiques et des usages mal intentionnés. Normal, car ces études ont comme prérequis une bonne dose d'expérience...
+
+
+
+.Expérience 
+image::etudiant-apprentissage.jpg[caption="",title="l'expérience prime",alt="expérience prime"]
+
+=== Qualité de l'expérience
+
+Il existe dela part de l'étudiant une tendance certaine à rechercher systématiquement une solution à tout problème sur internet. Normal, car on leur a toujours dit que l'on trouve (de) tout sur internet :)), rendant difficile, pour l'apprenant, de distinguer ce qui est du ressort d'une solution logique à construire - avec les moyens sous la main - d'une recherche d'une solution toute faite. 
+
+NOTE: Par exemple le projet demande une fusion sélective très particulière de deux fichiers CSV, et quelques étudiants ne se sont pas contentés d'un exemple de code de lecture/écriture d'un tel fichier, cherchant de longues heures une solution de fusion clé en main sur le net...
+
+Dans la même veine, suivre un tutoriel n'est pas de l'expérience, mais aller au delà, c'est à dire *comprendre ce qui a été réalisé*, l'*adapter à un projet*, l'*étendre* sur la base d'une *idée d'amélioration* ou la *création d'une nouvelle fonctionnalité*, oui. L'expérience forge la créativité.
+
+En tant que professeur, nous devrions orienter nos évaluations sur ces points.
+
+[sidebar]
+.Conclusion
+--
+L'ANSII préconise d'intégrer les risques cyber dès le début d'un projet. Nous avons constaté que l'étude d'usages malveillants en cybersecurité contribue à installer un recul sur la pratique des étudiants. C'est déjà beaucoup, mais n'oublions pas qu'il faut du temps pour que germent ces concepts.
+--
+
+
+.Un constat
+CAUTION: L'étude des risques cyber, tout comme celle des tests unitaires, est discriminante dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l'application). Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n'ont pas été en mesure de produire, dans les temps imposés, de scénarios d'utilisateurs malveillants, en cette année covid 2021-2022)
+

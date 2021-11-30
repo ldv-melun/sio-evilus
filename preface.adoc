@@ -1,0 +1,14 @@
+[preface]
+== Preface
+
+Ce document présente un retour d'expérience d'une introduction à la cybersécurité, d'après le bloc 3 du référentiel du BTS SIO SLAM.
+
+Dans le cadre de leur formation (premier 1/2 semestre), les étudiants ont eu la charge de réaliser une application web, en mode projet. Outre le fait que leur projet devait être livré à une date donnée (sur un dépôt git distant de leur choix) sous la forme d'un rapport détaillé (README du projet), nous attendions qu'il intègre des scénarios d'actions mal intentionnées et la mise en oeuvre de mesures de défense.
+
+Les exemples de Evil User Stories (<<EvilUS>>) présentés ici, sont tirés de travaux de ces étudiants (deuxième année du BTS SLAM, lycée Léonard de Vinci de Melun,  2021-2022). Ces exemples sont donc centrés sur des problèmes liés aux cas d'utilisation métier de ce projet.
+
+Lien vers le projet : https://ocapuozzo.github.io/mission-etl-csv/  (libre utilisation)
+
+Compter minimum 3 semaines de travail, couvrant toutes les plages de TP info, plus un temps certain de travail à domicile.
+
+
