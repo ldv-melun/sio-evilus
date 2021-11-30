@@ -1,3 +1,5 @@
 cheatsheet*/
 
 *.html
+
+!/docs/index.html
