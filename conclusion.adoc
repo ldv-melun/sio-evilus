@@ -29,10 +29,11 @@ Dans la même veine, suivre un tutoriel n'est pas de l'expérience, mais aller a
 
 En tant que professeur, nous devrions orienter nos évaluations sur ces points.
 
+
 [sidebar]
 .Conclusion
 --
-L'ANSII préconise d'intégrer les risques cyber dès le début d'un projet. Nous avons constaté que l'étude d'usages malveillants en cybersecurité contribue à installer un recul sur la pratique des étudiants. C'est déjà beaucoup, mais n'oublions pas qu'il faut du temps pour que germent ces concepts.
+L'ANSII préconise d'intégrer les risques cyber dès le début d'un projet. La recherche, par l'étudiant, de scénarios d'usages malveillants et de contre-mesures force à un recul sur sa pratique. Cela parait être une excellente façon d'introduire une culture générale et un esprit de veille sur ce sujet. 
 --
 
 
