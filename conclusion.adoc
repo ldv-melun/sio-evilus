@@ -37,5 +37,6 @@ L'ANSII préconise d'intégrer les risques cyber dès le début d'un projet. Nou
 
 
 .Un constat
-CAUTION: L'étude des risques cyber, tout comme celle des tests unitaires, est discriminante dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l'application). Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n'ont pas été en mesure de produire, dans les temps imposés, de scénarios d'utilisateurs malveillants, en cette année covid 2021-2022)
+CAUTION: L'étude des risques cyber, tout comme celle des tests unitaires, est *discriminante* dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l'application). Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n'ont pas été en mesure de produire, dans les temps imposés, de scénarios d'utilisateurs malveillants, en cette année covid 2021-2022). L'accès à ce type de formation est ainsi clairement monté en exigence, et va dans le sens des attendus de professionnels du secteur. (https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/)
+
 
