@@ -1,6 +1,6 @@
 :imagesdir: images
 
-== Une sélection d'Evil User Stories 
+== Une sélection d'Evil User Stories proposés pas les étudiants
 
 
 === Team :  _Le nain et l'échelle_
@@ -29,7 +29,7 @@ Et dans le fichier `.env` je précise les informations de connexion à la base d
     DATABASE_URL="mysql://vetux_line:wNgEf23m*7MZdWZ9@127.0.0.1:3306/vetux_line?serverVersion=mariadb-10.4.21"
 ----
 
-.Mise en garde
+.Mise en garde de l'enseignant
 [WARNING]
 ====
 L'utilisation de solutions d'administration de base de données par l'intermédiaire d'un tiers applicatif comme `phpmyadmin` est à éviter si possible, car cette pratique va à l'encontre du principe de *_réduction de la surface d'attaque_*. 
@@ -115,12 +115,14 @@ Ici on vérifie juste si dans cette réception on a bien l'extension `csv` via u
 Nos fichiers `csv` ont comme MimeType `application/csv` et pas `text/csv`, on a donc dû vérifier seulement la présence de l'extension.
 
 
-.Attention, solution naïve : l'habit ne fait pas le moine
+.Remarque enseignant
 [CAUTION]
 ====
-L'extension informe sur le contenu d'un fichier mais ne le garantit pas. La preuve : le changement d'extension du nom d'un fichier est sans impact sur son contenu.
+*Attention, solution naïve, l'habit ne fait pas le moine !*
 
-La limite de la taille maximale des fichiers autorisés est également à considérer. Généralement sous la forme d'un paramètre du service HTTP en amont.
+L'extension informe sur le contenu d'un fichier mais ne le garantit pas. Constatez-le par vous-même : Le changement d'extension du nom d'un fichier est sans impact sur son contenu.
+
+D'autre part, la limite de la taille maximale des fichiers autorisés est également à considérer. Généralement sous la forme d'un paramètre du service HTTP en amont.
 ====
 
 
@@ -139,7 +141,7 @@ En tant qu’utilisateur malveillant je veux empecher l’accès au site en fais
 *Contre-mesure* : En tant que développeur pour empêcher les attaques dos je m'assure que l'application n'utilise des composants sujets à de telles attaques et je me sers des protections mis a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)
 
 
-.Exemple hébergeur OVH
+.Exemple hébergeur OVH (présenté par l'enseignant)
 [NOTE]
 ====
 
@@ -199,7 +201,7 @@ Les méthodes contrôleur de la classe `IndexController` sont annotatiée par `@
 Vidéo de démonstration : https://youtu.be/DO1L1NVX6XI
 
 
-.Symfony security
+.Ramarque 
 [NOTE]
 --
 Avec `symfony` la gestion des habilitations peut être réalisée :
@@ -251,7 +253,7 @@ DATABASE_URL="mysql://<user>:<password>@127.0.0.1:3306/<database>?serverVersion=
 À charge de la personne responsable de la mise en production de renseigner les données de connexion à la base de données dans le fichier de configuration `.env`.
 
 
-.sécuriser les données de configuration
+.Remarque enseignant
 [NOTE]
 --
 
