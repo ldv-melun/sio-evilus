@@ -429,22 +429,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#truepreface">1. Preface</a></li>
-<li><a href="#trueune-s-lection-d-evil-user-stories">2. Une sélection d&#8217;Evil User Stories</a>
+<li><a href="#truer-sum">2. Résumé</a></li>
+<li><a href="#trueune-s-lection-d-evil-user-stories">3. Une sélection d&#8217;Evil User Stories</a>
 <ul class="sectlevel2">
-<li><a href="#trueteam-em-le-nain-et-l-chelle-em">2.1. Team :  <em>Le nain et l'échelle</em></a></li>
-<li><a href="#trueteam-em-les-pas-d-id-em">2.2. Team : <em>Les Pas d&#8217;ID</em></a></li>
-<li><a href="#trueteam-em-yannick-em">2.3. Team :  <em>Yannick</em></a></li>
-<li><a href="#trueteam-em-schoolalexis-em">2.4. Team : <em>Schoolalexis</em></a></li>
-<li><a href="#trueteam-em-les-alternants-em">2.5. Team : <em>Les Alternants</em></a></li>
-<li><a href="#trueteam-em-tournesol-em">2.6. Team : <em>Tournesol</em></a></li>
+<li><a href="#trueteam-em-le-nain-et-l-chelle-em">3.1. Team :  <em>Le nain et l'échelle</em></a></li>
+<li><a href="#trueteam-em-les-pas-d-id-em">3.2. Team : <em>Les Pas d&#8217;ID</em></a></li>
+<li><a href="#trueteam-em-yannick-em">3.3. Team :  <em>Yannick</em></a></li>
+<li><a href="#trueteam-em-schoolalexis-em">3.4. Team : <em>Schoolalexis</em></a></li>
+<li><a href="#trueteam-em-les-alternants-em">3.5. Team : <em>Les Alternants</em></a></li>
+<li><a href="#trueteam-em-tournesol-em">3.6. Team : <em>Tournesol</em></a></li>
 </ul>
 </li>
-<li><a href="#trueconclusion">3. Conclusion</a>
+<li><a href="#trueconclusion">4. Conclusion</a>
 <ul class="sectlevel2">
-<li><a href="#truequalit-de-l-exp-rience">3.1. Qualité de l&#8217;expérience</a></li>
+<li><a href="#truequalit-de-l-exp-rience">4.1. Qualité de l&#8217;expérience</a></li>
 </ul>
 </li>
-<li><a href="#trueglossaire">4. Glossaire</a></li>
+<li><a href="#trueglossaire">5. Glossaire</a></li>
 </ul>
 </div>
 </div>
@@ -456,24 +457,51 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Ce document présente un retour d&#8217;expérience d&#8217;une introduction à la cybersécurité, d&#8217;après le bloc 3 du référentiel du BTS SIO SLAM.</p>
 </div>
 <div class="paragraph">
-<p>Dans le cadre de leur formation (premier 1/2 semestre), les étudiants ont eu la charge de réaliser une application web, en mode projet. Outre le fait que leur projet devait être livré à une date donnée (sur un dépôt git distant de leur choix) sous la forme d&#8217;un rapport détaillé (README du projet), nous attendions qu&#8217;il intègre des scénarios d&#8217;actions mal intentionnées et la mise en oeuvre de mesures de défense.</p>
+<p>Dans le cadre de leur formation (troisième semestre), les étudiants ont eu la charge de réaliser une application web, en mode projet. Outre le fait que leur projet devait être livré à une date donnée (sur un dépôt git distant de leur choix), associé à un rapport détaillé (README du projet), nous attendions qu&#8217;il intègre des scénarios d&#8217;actions mal intentionnées et la mise en oeuvre de contre mesures de défense.</p>
 </div>
 <div class="paragraph">
 <p>Les exemples de Evil User Stories (<a href="#EvilUS">[EvilUS]</a>) présentés ici, sont tirés de travaux de ces étudiants (deuxième année du BTS SLAM, lycée Léonard de Vinci de Melun,  2021-2022). Ces exemples sont donc centrés sur des problèmes liés aux cas d&#8217;utilisation métier de ce projet.</p>
 </div>
 <div class="paragraph">
-<p>Lien vers le projet : <a href="https://ocapuozzo.github.io/mission-etl-csv/" class="bare">https://ocapuozzo.github.io/mission-etl-csv/</a>  (libre utilisation)</p>
-</div>
-<div class="paragraph">
-<p>Compter minimum 3 semaines de travail, couvrant toutes les plages de TP info, plus un temps certain de travail à domicile.</p>
+<p>Pour ceux qui souhaitent reconduire cette expérience très exactement, voici le lien vers le projet : <a href="https://ocapuozzo.github.io/mission-etl-csv/" class="bare">https://ocapuozzo.github.io/mission-etl-csv/</a>  (libre utilisation). Compter minimum 3 semaines de travail étudiant, couvrant toutes les plages de TP info, plus un temps certain de travail à domicile (première semaine des vacances de Toussaint, par exemple)</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueune-s-lection-d-evil-user-stories"><a class="anchor" href="#trueune-s-lection-d-evil-user-stories"></a>2. Une sélection d&#8217;Evil User Stories</h2>
+<h2 id="truer-sum"><a class="anchor" href="#truer-sum"></a>2. Résumé</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La cybersécurité en développement logiciel (défense) nécessite un esprit d&#8217;analyse certain qui s&#8217;appuie en partie sur une connaissance fine des technologies mises en oeuvre (infrastructures, protocoles, architectures des tiers, architectures en couches&#8230;&#8203;). Cette connaissance se forge par l&#8217;expérience.</p>
+</div>
+<div class="paragraph">
+<p>Enseigner la cybersécurité à BAC+2, à des débutants, c&#8217;est accompagner l'étudiant sur le chemin de l&#8217;expérience et en même temps l'éclairer à la fois sur les bonnes pratiques et les usages déviants.</p>
+</div>
+<div class="paragraph">
+<p>Pour autant, l'étudiant a tendance à se focaliser principalement sur la consolidation de connaissances informatiques nouvelles (comprendre la technologie, mettre au point l&#8217;application) laissant malheureusement peu de place à l'étude de bonnes pratiques et des usages mal intentionnés. Normal, car ces études ont comme prérequis une bonne dose d&#8217;expérience&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/etudiant-apprentissage.jpg" alt="expérience prime">
+</div>
+<div class="title">l&#8217;expérience prime</div>
+</div>
+<div class="paragraph">
+<div class="title">Un constat</div>
+<p>L'étude des risques cyber, tout comme celle des tests unitaires, est <strong>discriminante</strong> dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l&#8217;application). Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n&#8217;ont pas été en mesure de produire, dans les temps imposés, de scénarios d&#8217;utilisateurs malveillants, en cette année covid 2021-2022).</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;accès à ce type de formation est ainsi clairement monté en exigence, et va dans le sens des attendus de professionnels du secteur. (<a href="https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/" class="bare">https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/</a>).</p>
+</div>
+<div class="paragraph">
+<p>À nous, enseignants, de relever le défi de sensibiliser l&#8217;ensemble de nos étudiants aux risques liés à la cybersécurité, et aux actions pour en minimiser l&#8217;impact.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueune-s-lection-d-evil-user-stories"><a class="anchor" href="#trueune-s-lection-d-evil-user-stories"></a>3. Une sélection d&#8217;Evil User Stories</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueteam-em-le-nain-et-l-chelle-em"><a class="anchor" href="#trueteam-em-le-nain-et-l-chelle-em"></a>2.1. Team :  <em>Le nain et l'échelle</em></h3>
+<h3 id="trueteam-em-le-nain-et-l-chelle-em"><a class="anchor" href="#trueteam-em-le-nain-et-l-chelle-em"></a>3.1. Team :  <em>Le nain et l'échelle</em></h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Evil User Story 1</div>
@@ -625,7 +653,7 @@ class UploadController extends AbstractController</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueteam-em-les-pas-d-id-em"><a class="anchor" href="#trueteam-em-les-pas-d-id-em"></a>2.2. Team : <em>Les Pas d&#8217;ID</em></h3>
+<h3 id="trueteam-em-les-pas-d-id-em"><a class="anchor" href="#trueteam-em-les-pas-d-id-em"></a>3.2. Team : <em>Les Pas d&#8217;ID</em></h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Evil User Story 4</div>
@@ -692,7 +720,7 @@ Votre Service client OVHcloud</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueteam-em-yannick-em"><a class="anchor" href="#trueteam-em-yannick-em"></a>2.3. Team :  <em>Yannick</em></h3>
+<h3 id="trueteam-em-yannick-em"><a class="anchor" href="#trueteam-em-yannick-em"></a>3.3. Team :  <em>Yannick</em></h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Evil User Story 5</div>
@@ -740,7 +768,7 @@ Votre Service client OVHcloud</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueteam-em-schoolalexis-em"><a class="anchor" href="#trueteam-em-schoolalexis-em"></a>2.4. Team : <em>Schoolalexis</em></h3>
+<h3 id="trueteam-em-schoolalexis-em"><a class="anchor" href="#trueteam-em-schoolalexis-em"></a>3.4. Team : <em>Schoolalexis</em></h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Evil User Story 6</div>
@@ -814,7 +842,7 @@ Votre Service client OVHcloud</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueteam-em-les-alternants-em"><a class="anchor" href="#trueteam-em-les-alternants-em"></a>2.5. Team : <em>Les Alternants</em></h3>
+<h3 id="trueteam-em-les-alternants-em"><a class="anchor" href="#trueteam-em-les-alternants-em"></a>3.5. Team : <em>Les Alternants</em></h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Evil User Story 7</div>
@@ -877,7 +905,7 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueteam-em-tournesol-em"><a class="anchor" href="#trueteam-em-tournesol-em"></a>2.6. Team : <em>Tournesol</em></h3>
+<h3 id="trueteam-em-tournesol-em"><a class="anchor" href="#trueteam-em-tournesol-em"></a>3.6. Team : <em>Tournesol</em></h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Evil User Story 9</div>
@@ -992,31 +1020,16 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueconclusion"><a class="anchor" href="#trueconclusion"></a>3. Conclusion</h2>
+<h2 id="trueconclusion"><a class="anchor" href="#trueconclusion"></a>4. Conclusion</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Cette première expérimentation (première année d&#8217;examen du nouveau référentiel SIO) a permi de mesurer la difficulté à enseigner les principes de cybersécurité à des débutants en programmation. Les propositions d'étudiants présentées ici ont, en partie, été reformulées, mais restent relativement fidèles à leur version originale.</p>
 </div>
 <div class="paragraph">
-<p>Seule la proposition de la team <em>Tournesol</em> n&#8217;est pas une proposition d'étudiant. Malgré le fait que le cas <em>Optical Center</em> ait été vu en cours, au même titre, mais plus fin, que la faiblesse du code généré par le module <em>maker</em> d&#8217;authentification (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l&#8217;utilisateur). Nous pensons que cette proposition n&#8217;a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un recul basé sur une expérience en devenir.</p>
-</div>
-<div class="paragraph">
-<p>La cybersécurité en développement logiciel (défense) nécessite un esprit d&#8217;analyse fort qui s&#8217;appuie essentiellement sur une connaissance fine des technologies mises en oeuvre (infrastructures, protocoles, architectures des tiers, architectures en couches&#8230;&#8203;). Cette connaissance se forge par l&#8217;expérience.</p>
-</div>
-<div class="paragraph">
-<p>Enseigner la cybersécurité à BAC+2, à des débutants, c&#8217;est accompagner l'étudiant sur le chemin de l&#8217;expérience et en même temps l'éclairer à la fois sur les bonnes pratiques et les usages déviants.</p>
-</div>
-<div class="paragraph">
-<p>Seulement, l'étudiant a tendance à se focaliser principalement sur la consolidation de connaissances informatiques nouvelles (comprendre la technologie, mettre au point l&#8217;application) laissant malheureusement peu de place à l'étude de bonnes pratiques et des usages mal intentionnés. Normal, car ces études ont comme prérequis une bonne dose d&#8217;expérience&#8230;&#8203;</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/etudiant-apprentissage.jpg" alt="expérience prime">
-</div>
-<div class="title">l&#8217;expérience prime</div>
+<p>Seule la proposition de la team <em>Tournesol</em> n&#8217;est pas une proposition d'étudiant (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l&#8217;utilisateur). Malgré le fait que le cas <em>Optical Center</em> ait été évoqué en cours, la faiblesse du code généré par le module <em>maker</em> d&#8217;authentification dans sa version d&#8217;octobre 2019 n&#8217;a pas fait objet d&#8217;une contre-mesure. Nous pensons que cette proposition n&#8217;a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un recul basé sur une expérience en devenir.</p>
 </div>
 <div class="sect2">
-<h3 id="truequalit-de-l-exp-rience"><a class="anchor" href="#truequalit-de-l-exp-rience"></a>3.1. Qualité de l&#8217;expérience</h3>
+<h3 id="truequalit-de-l-exp-rience"><a class="anchor" href="#truequalit-de-l-exp-rience"></a>4.1. Qualité de l&#8217;expérience</h3>
 <div class="paragraph">
 <p>Il existe dela part de l'étudiant une tendance certaine à rechercher systématiquement une solution à tout problème sur internet. Normal, car on leur a toujours dit que l&#8217;on trouve (de) tout sur internet :)), rendant difficile, pour l&#8217;apprenant, de distinguer ce qui est du ressort d&#8217;une solution logique à construire - avec les moyens sous la main - d&#8217;une recherche d&#8217;une solution toute faite.</p>
 </div>
@@ -1046,24 +1059,11 @@ Par exemple le projet demande une fusion sélective très particulière de deux 
 </div>
 </div>
 </div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="title">Un constat</div>
-L'étude des risques cyber, tout comme celle des tests unitaires, est <strong>discriminante</strong> dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l&#8217;application). Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n&#8217;ont pas été en mesure de produire, dans les temps imposés, de scénarios d&#8217;utilisateurs malveillants, en cette année covid 2021-2022). L&#8217;accès à ce type de formation est ainsi clairement monté en exigence, et va dans le sens des attendus de professionnels du secteur. (<a href="https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/" class="bare">https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/</a>)
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueglossaire"><a class="anchor" href="#trueglossaire"></a>4. Glossaire</h2>
+<h2 id="trueglossaire"><a class="anchor" href="#trueglossaire"></a>5. Glossaire</h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -1108,7 +1108,7 @@ source : <a href="https://www.ovh.com/fr/anti-ddos/mitigation.xml" class="bare">
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-11-30 18:46:30 CET
+Last updated 2021-12-04 16:41:33 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
