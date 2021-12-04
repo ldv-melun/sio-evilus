@@ -430,7 +430,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#truepreface">1. Preface</a></li>
 <li><a href="#truer-sum">2. Résumé</a></li>
-<li><a href="#trueune-s-lection-d-evil-user-stories">3. Une sélection d&#8217;Evil User Stories</a>
+<li><a href="#trueune-s-lection-d-evil-user-stories-propos-s-pas-les-tudiants">3. Une sélection d&#8217;Evil User Stories proposés pas les étudiants</a>
 <ul class="sectlevel2">
 <li><a href="#trueteam-em-le-nain-et-l-chelle-em">3.1. Team :  <em>Le nain et l'échelle</em></a></li>
 <li><a href="#trueteam-em-les-pas-d-id-em">3.2. Team : <em>Les Pas d&#8217;ID</em></a></li>
@@ -498,7 +498,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueune-s-lection-d-evil-user-stories"><a class="anchor" href="#trueune-s-lection-d-evil-user-stories"></a>3. Une sélection d&#8217;Evil User Stories</h2>
+<h2 id="trueune-s-lection-d-evil-user-stories-propos-s-pas-les-tudiants"><a class="anchor" href="#trueune-s-lection-d-evil-user-stories-propos-s-pas-les-tudiants"></a>3. Une sélection d&#8217;Evil User Stories proposés pas les étudiants</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="trueteam-em-le-nain-et-l-chelle-em"><a class="anchor" href="#trueteam-em-le-nain-et-l-chelle-em"></a>3.1. Team :  <em>Le nain et l'échelle</em></h3>
@@ -537,7 +537,7 @@ Pour cela avec <code>phpMyAdmin</code> je crée ce nouvel utilisateur comme ceci
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-<div class="title">Mise en garde</div>
+<div class="title">Mise en garde de l&#8217;enseignant</div>
 <div class="paragraph">
 <p>L&#8217;utilisation de solutions d&#8217;administration de base de données par l&#8217;intermédiaire d&#8217;un tiers applicatif comme <code>phpmyadmin</code> est à éviter si possible, car cette pratique va à l&#8217;encontre du principe de <strong><em>réduction de la surface d&#8217;attaque</em></strong>.</p>
 </div>
@@ -640,12 +640,15 @@ class UploadController extends AbstractController</code></pre>
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-<div class="title">Attention, solution naïve : l&#8217;habit ne fait pas le moine</div>
+<div class="title">Remarque enseignant</div>
 <div class="paragraph">
-<p>L&#8217;extension informe sur le contenu d&#8217;un fichier mais ne le garantit pas. La preuve : le changement d&#8217;extension du nom d&#8217;un fichier est sans impact sur son contenu.</p>
+<p><strong>Attention, solution naïve, l&#8217;habit ne fait pas le moine !</strong></p>
 </div>
 <div class="paragraph">
-<p>La limite de la taille maximale des fichiers autorisés est également à considérer. Généralement sous la forme d&#8217;un paramètre du service HTTP en amont.</p>
+<p>L&#8217;extension informe sur le contenu d&#8217;un fichier mais ne le garantit pas. Constatez-le par vous-même : Le changement d&#8217;extension du nom d&#8217;un fichier est sans impact sur son contenu.</p>
+</div>
+<div class="paragraph">
+<p>D&#8217;autre part, la limite de la taille maximale des fichiers autorisés est également à considérer. Généralement sous la forme d&#8217;un paramètre du service HTTP en amont.</p>
 </div>
 </td>
 </tr>
@@ -675,7 +678,7 @@ class UploadController extends AbstractController</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="title">Exemple hébergeur OVH</div>
+<div class="title">Exemple hébergeur OVH (présenté par l&#8217;enseignant)</div>
 <div class="paragraph">
 <p>Ci-dessous, des extraits de courrier envoyé par OVH à un de ses clients suite à la détectection une attaque <a href="#DDoS">[DDoS]</a>.</p>
 </div>
@@ -745,7 +748,7 @@ Votre Service client OVHcloud</pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="title">Symfony security</div>
+<div class="title">Ramarque</div>
 <div class="paragraph">
 <p>Avec <code>symfony</code> la gestion des habilitations peut être réalisée :</p>
 </div>
@@ -818,7 +821,7 @@ Votre Service client OVHcloud</pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="title">sécuriser les données de configuration</div>
+<div class="title">Remarque enseignant</div>
 <div class="paragraph">
 <p>Une autre solution consiste à chiffrer les variables d&#8217;environnement.</p>
 </div>
@@ -1108,7 +1111,7 @@ source : <a href="https://www.ovh.com/fr/anti-ddos/mitigation.xml" class="bare">
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-04 17:47:16 CET
+Last updated 2021-12-04 17:51:07 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
