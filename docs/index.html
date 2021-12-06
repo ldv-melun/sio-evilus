@@ -429,7 +429,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#truepreface">1. Preface</a></li>
-<li><a href="#truer-sum">2. Résumé</a></li>
+<li><a href="#resume">2. Résumé</a></li>
 <li><a href="#trueune-s-lection-d-evil-user-stories-propos-s-pas-les-tudiants">3. Une sélection d&#8217;Evil User Stories proposés pas les étudiants</a>
 <ul class="sectlevel2">
 <li><a href="#trueteam-em-le-nain-et-l-chelle-em">3.1. Team :  <em>Le nain et l'échelle</em></a></li>
@@ -468,7 +468,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="truer-sum"><a class="anchor" href="#truer-sum"></a>2. Résumé</h2>
+<h2 id="resume"><a class="anchor" href="#resume"></a>2. Résumé</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>La cybersécurité en développement logiciel (défense) nécessite un esprit d&#8217;analyse certain qui s&#8217;appuie en partie sur une connaissance fine des technologies mises en oeuvre (infrastructures, protocoles, architectures des tiers, architectures en couches&#8230;&#8203;). Cette connaissance se forge par l&#8217;expérience.</p>
@@ -477,7 +477,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Enseigner la cybersécurité à BAC+2, à des débutants, c&#8217;est accompagner l'étudiant sur le chemin de l&#8217;expérience et en même temps l'éclairer à la fois sur les bonnes pratiques et les usages déviants.</p>
 </div>
 <div class="paragraph">
-<p>Pour autant, l'étudiant a tendance à se focaliser principalement sur la consolidation de connaissances informatiques nouvelles (comprendre la technologie, mettre au point l&#8217;application) laissant malheureusement peu de place à l'étude de bonnes pratiques et des usages mal intentionnés. Normal, car ces études ont comme prérequis une bonne dose d&#8217;expérience&#8230;&#8203;</p>
+<p>Pour autant, l'étudiant a tendance à se focaliser principalement sur la consolidation de connaissances techniques nouvelles (comprendre la technologie, mettre au point l&#8217;application) laissant une moindre place à l'étude de bonnes pratiques et des usages mal intentionnés. Normal, car ces études ont comme prérequis une bonne dose d&#8217;expérience&#8230;&#8203;</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -486,14 +486,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">l&#8217;expérience prime</div>
 </div>
 <div class="paragraph">
-<div class="title">Un constat</div>
-<p>L'étude des risques cyber, tout comme celle des tests unitaires, est <strong>discriminante</strong> dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l&#8217;application). Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n&#8217;ont pas été en mesure de produire, dans les temps imposés, de scénarios d&#8217;utilisateurs malveillants, en cette année covid 2021-2022).</p>
+<p>L'étude des risques cyber, tout comme celle des tests unitaires, est discriminante dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l&#8217;application).</p>
 </div>
 <div class="paragraph">
 <p>L&#8217;accès à ce type de formation est ainsi clairement monté en exigence, et va dans le sens des attendus de professionnels du secteur. (<a href="https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/" class="bare">https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/</a>).</p>
 </div>
 <div class="paragraph">
 <p>À nous, enseignants, de relever le défi de sensibiliser l&#8217;ensemble de nos étudiants aux risques liés à la cybersécurité, et aux actions pour en minimiser l&#8217;impact.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Conclusion</div>
+<div class="paragraph">
+<p>L&#8217;ANSII préconise d&#8217;intégrer les risques cyber dès le début d&#8217;un projet. C&#8217;est ce que nous avons tenté de faire, en intégrant la recherche, par l'étudiant, de scénarios d&#8217;usages malveillants et de contre-mesures dès la conception des premières briques de leur application.</p>
+</div>
+<div class="paragraph">
+<p>Cette pratique s&#8217;avère payante car elle sensibilise l'étudiant à la fois aux risques en cybersécurité et à sa part de responsabilité dans ce domaine.</p>
+</div>
+<div class="paragraph">
+<p>Nous avons décidé de la gnéraliser sur l&#8217;ensemble des projets menés par les étudiants.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -511,7 +524,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure concept</strong> :  <em>principe du moindre privilège</em></p>
+<p><strong>Concept de contre-mesure</strong> :  <a href="#moindre-privilege">[moindre-privilege]</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Contre-mesure</strong> : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d&#8217;accéderà d&#8217;autres bases de données sur le même serveur.
@@ -557,7 +570,7 @@ Pour cela avec <code>phpMyAdmin</code> je crée ce nouvel utilisateur comme ceci
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure concept</strong> :  <em>principe du moindre privilège</em></p>
+<p><strong>Concept de contre-mesure</strong> : <a href="#moindre-privilege">[moindre-privilege]</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Contre-mesure</strong>: En tant que développeur, je veux restreindre l&#8217;accès à certaines pages à des utilisateurs ayant un rôle spécifique, afin d'éviter qu&#8217;un utilisateur malveillant ait accès aux actions et données de ces rôles. Pour cela je configure dans le fichier <code>security.yaml</code> les lignes de <code>acces_control</code>:</p>
@@ -606,7 +619,7 @@ class UploadController extends AbstractController</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure concept</strong> :  <em>ne pas diffuser de données techniques d&#8217;erreur</em>, <em>ne jamais faire confiance aux données d&#8217;entrée.</em></p>
+<p><strong>Concepts de contre-mesure</strong> :  <em>ne pas diffuser de données techniques d&#8217;erreur</em>, <em>ne jamais faire confiance aux données d&#8217;entrée.</em></p>
 </div>
 <div class="paragraph">
 <p><strong>Contre-mesure</strong> : En tant que développeur, je veux seulement autoriser les fichiers <code>csv</code> dans l&#8217;upload pour éviter des attaques malveillantes. Pour cela j&#8217;interviens dans la classe contrôleur <code>UploadController.php</code> afin de vérifier le type de chaque fichier reçu :</p>
@@ -666,7 +679,7 @@ class UploadController extends AbstractController</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure concept</strong> : Menaces <a href="#DDoS">[DDoS]</a> à intégrer dans le plan de mise en production.</p>
+<p><strong>Concept de contre-mesure</strong> : Menaces <a href="#DDoS">[DDoS]</a> à intégrer dans le plan de mise en production.</p>
 </div>
 <div class="paragraph">
 <p><strong>Contre-mesure</strong> : En tant que développeur pour empêcher les attaques dos je m&#8217;assure que l&#8217;application n&#8217;utilise des composants sujets à de telles attaques et je me sers des protections mis a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)</p>
@@ -733,6 +746,9 @@ Votre Service client OVHcloud</pre>
 </div>
 </div>
 <div class="paragraph">
+<p><strong>Concept de contre-mesure</strong> : <a href="#moindre-privilege">[moindre-privilege]</a></p>
+</div>
+<div class="paragraph">
 <p><strong>Contre-mesure</strong> : En tant que développeur, afin d&#8217;empêcher les personnes malveillantes qui souhaitent, à partir de la barre d&#8217;adresse, accéder aux différentes routes de l&#8217;application Vetux-Line sans être connecté.</p>
 </div>
 <div class="paragraph">
@@ -779,6 +795,9 @@ Votre Service client OVHcloud</pre>
 <p>En tant que personne malveillante, je veux avoir accès aux données de connexion à la base de données afin d&#8217;exploiter les mots de passes et autres données.</p>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p><strong>Concept de contre-mesure</strong> : <a href="#reduction-de-la-surface-d-attaque">[reduction-de-la-surface-d-attaque]</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Contre-mesure</strong> : En tant que développeur, afin d&#8217;empêcher des personnes malveillantes qui souhaitent, à partir de la base de données, se connecter aux comptes des utilisateurs et exploiter leurs mots de passe (dans le cas de l&#8217;application Vetux Line), je sécurise le fichier <code>.env</code> qui contient l&#8217;identifiant de connexion à la base de données.</p>
@@ -855,7 +874,10 @@ Votre Service client OVHcloud</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure</strong> : En tant que développeur je surveille les mises à jour de Symfony, particulièrement en terme de sécurité (site <code><a href="https://symfony.com/" class="bare">https://symfony.com/</a></code>), ainsi que les autres composants tiers utilisés par mon projet, en exécutant cette commande :</p>
+<p><strong>Concept de contre-mesure</strong> : <a href="#maintien-en-conditions-de-securite">[maintien-en-conditions-de-securite]</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Contre-mesure</strong> : En tant que développeur je surveille les mises à jour de Symfony, particulièrement en terme de sécurité (site <code><a href="https://symfony.com/" class="bare">https://symfony.com/</a></code>), ainsi que les autres composants tiers utilisés par mon projet.  Exemple de commandes :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -879,7 +901,7 @@ Votre Service client OVHcloud</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Pour vérifier que les composants dont dépend l&#8217;application n’ont pas de failles détectées à ce jour. Si nécessaire je mets à jour la version des composants en prenant soin de bien tester l&#8217;application (tests de non régression)</p>
+<p>Pour vérifier que les composants dont dépend l&#8217;application n’ont pas de failles détectées à ce jour. Si nécessaire je mets à jour la version des composants en prenant soin de bien consulter les recommandations de mises à niveau et de tester l&#8217;application (tests de non régression)</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -888,6 +910,9 @@ Votre Service client OVHcloud</pre>
 <p>En tant que personne malveillante si j&#8217;arrive à extraire les données des utilisateurs de l&#8217;application, je compte utiliser leur identité et leur mot de passe pour accèder à d&#8217;autres applications.</p>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p><strong>Concept de contre-mesure</strong> : <a href="#reduction-de-la-surface-d-attaque">[reduction-de-la-surface-d-attaque]</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Justification</strong>: En effet, plusieurs études (<a href="https://www.cyclonis.com/fr/rapport-83-pour-cent-utilisateurs-interroges-utilisent-meme-mot-de-passe-plusieurs-sites/" class="bare">https://www.cyclonis.com/fr/rapport-83-pour-cent-utilisateurs-interroges-utilisent-meme-mot-de-passe-plusieurs-sites/</a> ou <a href="https://www.zdnet.fr/actualites/mot-de-passe-1-personne-sur-7-n-en-utilise-qu-un-seul-partout-39829024.htm" class="bare">https://www.zdnet.fr/actualites/mot-de-passe-1-personne-sur-7-n-en-utilise-qu-un-seul-partout-39829024.htm</a> et bien d’autres..) démontrent que les personnes utilisent souvent le même mot de passe un peu partout.</p>
@@ -918,7 +943,7 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Concepts</strong> : <a href="#defense-en-profondeur">[defense-en-profondeur]</a>, <a href="#zero-trust">[zero-trust]</a>, <a href="#moindre-privilege">[moindre-privilege]</a></p>
+<p><strong>Concepts de contre-mesure</strong> : <a href="#defense-en-profondeur">[defense-en-profondeur]</a>, <a href="#zero-trust">[zero-trust]</a>, <a href="#moindre-privilege">[moindre-privilege]</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Exemple connu Optical Center avril 2019</strong> (utilisateur sans privilège !) :
@@ -1013,7 +1038,7 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 <p>Très utile pour analyser des attaques silencieuses.</p>
 </div>
 <div class="paragraph">
-<p>La généralisation de journalisation de toutes actions illégales est à envisager (<em>zero trust</em>)</p>
+<p>La généralisation de journalisation de toutes actions illégales est à envisager (<a href="#zero-trust">[zero-trust]</a>)</p>
 </div>
 </td>
 </tr>
@@ -1029,7 +1054,7 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 <p>Cette première expérimentation (première année d&#8217;examen du nouveau référentiel SIO) a permi de mesurer la difficulté à enseigner les principes de cybersécurité à des débutants en programmation. Les propositions d'étudiants présentées ici ont, en partie, été reformulées, mais restent relativement fidèles à leur version originale.</p>
 </div>
 <div class="paragraph">
-<p>Seule la proposition de la team <em>Tournesol</em> n&#8217;est pas une proposition d'étudiant (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l&#8217;utilisateur). Malgré le fait que le cas <em>Optical Center</em> ait été évoqué en cours, la faiblesse du code généré par le module <em>maker</em> d&#8217;authentification dans sa version d&#8217;octobre 2019 n&#8217;a pas fait objet d&#8217;une contre-mesure. Nous pensons que cette proposition n&#8217;a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un recul basé sur une expérience en devenir.</p>
+<p>Seule la proposition de la team <em>Tournesol</em> n&#8217;est pas une proposition d'étudiant (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l&#8217;utilisateur). Malgré le fait que le cas <em>Optical Center</em> ait été évoqué en cours, la faiblesse du code généré par le module <em>maker</em> d&#8217;authentification dans sa version d&#8217;octobre 2021 n&#8217;a pas fait objet d&#8217;une contre-mesure. Nous pensons que cette proposition n&#8217;a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un temps de recul basé sur une expérience en devenir.</p>
 </div>
 <div class="sect2">
 <h3 id="truequalit-de-l-exp-rience"><a class="anchor" href="#truequalit-de-l-exp-rience"></a>4.1. Qualité de l&#8217;expérience</h3>
@@ -1049,18 +1074,13 @@ Par exemple le projet demande une fusion sélective très particulière de deux 
 </table>
 </div>
 <div class="paragraph">
-<p>Dans la même veine, suivre un tutoriel n&#8217;est pas de l&#8217;expérience, mais aller au delà, c&#8217;est à dire <strong>comprendre ce qui a été réalisé</strong>, l'<strong>adapter à un projet</strong>, l'<strong>étendre</strong> sur la base d&#8217;une <strong>idée d&#8217;amélioration</strong> ou la <strong>création d&#8217;une nouvelle fonctionnalité</strong>, oui. L&#8217;expérience forge la créativité.</p>
+<p>Dans la même veine, suivre un tutoriel n&#8217;est pas de l&#8217;expérience, mais aller au delà, c&#8217;est à dire <strong>comprendre ce qui a été réalisé</strong>, l'<strong>adapter à un projet</strong>, l'<strong>étendre</strong> sur la base d&#8217;une <strong>idée d&#8217;amélioration</strong> ou <strong>créer de nouvelles fonctionnalités</strong>, oui. L&#8217;expérience forge la créativité et inversement.</p>
 </div>
 <div class="paragraph">
-<p>En tant que professeur, nous devrions orienter nos évaluations sur ces points.</p>
+<p>En tant que professeur, nous devrions orienter nos évaluations sur ces points, en favorisant la créativité, essentielle en cybersécurité.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Conclusion</div>
 <div class="paragraph">
-<p>L&#8217;ANSII préconise d&#8217;intégrer les risques cyber dès le début d&#8217;un projet. La recherche, par l'étudiant, de scénarios d&#8217;usages malveillants et de contre-mesures force à un recul sur sa pratique. Cela parait être une excellente façon d&#8217;introduire une culture générale et un esprit de veille sur ce sujet.</p>
-</div>
-</div>
+<p><a href="#resume">Résumé</a></p>
 </div>
 </div>
 </div>
@@ -1101,6 +1121,14 @@ source : <a href="https://www.ovh.com/fr/anti-ddos/mitigation.xml" class="bare">
 <dd>
 <p>Technique qui consite à ne pas laisser une seule couche de sécurité gérer le parfeu de sécurité. En développement logiciel, cela consiste à munir certaines briques logicielles de contrôles suplémentaires de sécurité.</p>
 </dd>
+<dt class="hdlist1"><a id="reduction-de-la-surface-d-attaque"></a>Réduction de la surface d&#8217;attaque</dt>
+<dd>
+<p><em>L’ensemble des éléments techniques du SI qui peuvent être utilisés pour réaliser une attaque. Une surface d’attaque est d’autant plus large que le nombre d’éléments distincts est grand ou que ces derniers présentent des vulnérabilités exploitables par un attaquant.</em> (ANSSI - recommandation pour la protections des système d&#8217;information essentiels)</p>
+</dd>
+<dt class="hdlist1"><a id="maintien-en-conditions-de-securite"></a>Maintien en conditions de sécurité</dt>
+<dd>
+<p><em>Ensemble des mesures organisationnelles et techniques concourant à maintenir le niveau de sécurité d’un SI tout au long de son cycle de vie.</em>  (ANSSI - guide_protection_des_systemes_essentiels)</p>
+</dd>
 </dl>
 </div>
 <div class="paragraph">
@@ -1111,7 +1139,7 @@ source : <a href="https://www.ovh.com/fr/anti-ddos/mitigation.xml" class="bare">
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-04 17:51:07 CET
+Last updated 2021-12-06 10:38:34 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

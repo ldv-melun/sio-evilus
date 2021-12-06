@@ -25,5 +25,11 @@
 [[defense-en-profondeur]]Défense en profondeur::
   Technique qui consite à ne pas laisser une seule couche de sécurité gérer le parfeu de sécurité. En développement logiciel, cela consiste à munir certaines briques logicielles de contrôles suplémentaires de sécurité.
  
+[[reduction-de-la-surface-d-attaque]]Réduction de la surface d'attaque::
+  _L’ensemble des éléments techniques du SI qui peuvent être utilisés pour réaliser une attaque. Une surface d’attaque est d’autant plus large que le nombre d’éléments distincts est grand ou que ces derniers présentent des vulnérabilités exploitables par un attaquant._ (ANSSI - recommandation pour la protections des système d'information essentiels)
  
+[[maintien-en-conditions-de-securite]]Maintien en conditions de sécurité::
+  _Ensemble des mesures organisationnelles et techniques concourant à maintenir le niveau de sécurité d’un SI tout au long de son cycle de vie._  (ANSSI - guide_protection_des_systemes_essentiels)
+ 
+
 à compléter...

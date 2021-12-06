@@ -12,7 +12,7 @@
 En tant que personne malveillante, je souhaite obtenir les données de connexion à la base de données utilisée par l'application Vetux-Line, en vue d'exploiter des données d'autres bases de données hébergées sur le même serveur que Vetux-Line.
 --
 
-*Contre-mesure concept* :  _principe du moindre privilège_
+*Concept de contre-mesure* :  <<moindre-privilege>>
 
 
 *Contre-mesure* : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d'accéderà d'autres bases de données sur le même serveur. 
@@ -44,7 +44,7 @@ Préférez une console d'administration, connexion en `SSH`,  directement sur le
 En tant que personne malveillante, je cherche accéder à certaines pages sans authentification, dans le but d'avoir accès aux actions et aux données permises à certains rôles seulement.
 --
 
-*Contre-mesure concept* :  _principe du moindre privilège_
+*Concept de contre-mesure* : <<moindre-privilege>>
 
 
 *Contre-mesure*: En tant que développeur, je veux restreindre l'accès à certaines pages à des utilisateurs ayant un rôle spécifique, afin d'éviter qu'un utilisateur malveillant ait accès aux actions et données de ces rôles. Pour cela je configure dans le fichier `security.yaml` les lignes de `acces_control`:
@@ -86,7 +86,7 @@ Ainsi, toutes ses méthodes contrôleur seront accessibles qu'aux seules utilisa
 En tant que personne malveillante, je veux uploader des fichiers pour faire planter le serveur ou le hacker.
 --
 
-*Contre-mesure concept* :  _ne pas diffuser de données techniques d'erreur_, _ne jamais faire confiance aux données d'entrée._ 
+*Concepts de contre-mesure* :  _ne pas diffuser de données techniques d'erreur_, _ne jamais faire confiance aux données d'entrée._ 
 
 *Contre-mesure* : En tant que développeur, je veux seulement autoriser les fichiers `csv` dans l'upload pour éviter des attaques malveillantes. Pour cela j'interviens dans la classe contrôleur `UploadController.php` afin de vérifier le type de chaque fichier reçu :
 
@@ -135,7 +135,7 @@ D'autre part, la limite de la taille maximale des fichiers autorisés est égale
 En tant qu’utilisateur malveillant je veux empecher l’accès au site en faisant une attaque par déni de service (<<DDos>>) pour réduire la productivité du service en question.
 --
 
-*Contre-mesure concept* : Menaces <<DDoS>> à intégrer dans le plan de mise en production.
+*Concept de contre-mesure* : Menaces <<DDoS>> à intégrer dans le plan de mise en production.
 
 
 *Contre-mesure* : En tant que développeur pour empêcher les attaques dos je m'assure que l'application n'utilise des composants sujets à de telles attaques et je me sers des protections mis a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)
@@ -194,6 +194,8 @@ Votre Service client OVHcloud
 En tant que personne malveillante, je veux utiliser la barre d'adresse afin d'avoir accès aux différentes routes de l'application Vetux-line sans avoir besoin de me connecter.
 --
 
+*Concept de contre-mesure* : <<moindre-privilege>>
+
 *Contre-mesure* : En tant que développeur, afin d'empêcher les personnes malveillantes qui souhaitent, à partir de la barre d'adresse, accéder aux différentes routes de l'application Vetux-Line sans être connecté.
 
 Les méthodes contrôleur de la classe `IndexController` sont annotatiée par `@IsGranted("ROLE_ADMIN")`. Cette annotation permet de restreindre l'accès à tous les utilisateurs qui ne sont pas connecté ou qui ne possède pas le rôle `ROLE_ADMIN` aux différentes routes du controller. La personne malveillante, en essayant de se connecter à la route admin/fusion par exemple, ne va pas pouvoir y accéder, car elle sera directement redirigée sur la page de connexion.
@@ -221,6 +223,8 @@ Avec `symfony` la gestion des habilitations peut être réalisée :
 --
 En tant que personne malveillante, je veux avoir accès aux données de connexion à la base de données afin d'exploiter les mots de passes et autres données.
 --
+
+*Concept de contre-mesure* : <<reduction-de-la-surface-d-attaque>>
 
 *Contre-mesure* : En tant que développeur, afin d'empêcher des personnes malveillantes qui souhaitent, à partir de la base de données, se connecter aux comptes des utilisateurs et exploiter leurs mots de passe (dans le cas de l'application Vetux Line), je sécurise le fichier `.env` qui contient l'identifiant de connexion à la base de données.
 
@@ -274,8 +278,9 @@ https://symfony.com/doc/current/configuration/secrets.html
 --
 En tant que personne malveillante j’ai découvert que Vetux-Line utilise une ancienne version de Symfony qui n'est pas à jour. Je vais donc me documenter sur les failles de cette ancienne version, en vue de les exploiter.
 --
+*Concept de contre-mesure* : <<maintien-en-conditions-de-securite>>
 
-*Contre-mesure* : En tant que développeur je surveille les mises à jour de Symfony, particulièrement en terme de sécurité (site `https://symfony.com/`), ainsi que les autres composants tiers utilisés par mon projet, en exécutant cette commande :
+*Contre-mesure* : En tant que développeur je surveille les mises à jour de Symfony, particulièrement en terme de sécurité (site `https://symfony.com/`), ainsi que les autres composants tiers utilisés par mon projet.  Exemple de commandes :
 
 [source, bash]
 ----
@@ -297,7 +302,7 @@ Je réalise cette commande supplémentaire pour vérifier qu’il n’y a pas d�
 symfony security:check
 ----
 
-Pour vérifier que les composants dont dépend l'application n’ont pas de failles détectées à ce jour. Si nécessaire je mets à jour la version des composants en prenant soin de bien tester l'application (tests de non régression)
+Pour vérifier que les composants dont dépend l'application n’ont pas de failles détectées à ce jour. Si nécessaire je mets à jour la version des composants en prenant soin de bien consulter les recommandations de mises à niveau et de tester l'application (tests de non régression)
 
 
 [sidebar]
@@ -305,6 +310,8 @@ Pour vérifier que les composants dont dépend l'application n’ont pas de fail
 --
 En tant que personne malveillante si j'arrive à extraire les données des utilisateurs de l'application, je compte utiliser leur identité et leur mot de passe pour accèder à d'autres applications. 
 --
+
+*Concept de contre-mesure* : <<reduction-de-la-surface-d-attaque>>
 
 *Justification*: En effet, plusieurs études (https://www.cyclonis.com/fr/rapport-83-pour-cent-utilisateurs-interroges-utilisent-meme-mot-de-passe-plusieurs-sites/ ou https://www.zdnet.fr/actualites/mot-de-passe-1-personne-sur-7-n-en-utilise-qu-un-seul-partout-39829024.htm et bien d’autres..) démontrent que les personnes utilisent souvent le même mot de passe un peu partout.
  
@@ -333,7 +340,7 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 En tant que utilisateur malveillant si j'arrive à accèder à des données d'autres utilisatueurs de même privilège, je peux alors aspirer leurs données en vue d'exploitations illégales, ou pire, endommager les données pour discréditer le service.  
 --
 
-*Concepts* : <<defense-en-profondeur>>, <<zero-trust>>, <<moindre-privilege>>
+*Concepts de contre-mesure* : <<defense-en-profondeur>>, <<zero-trust>>, <<moindre-privilege>>
 
 
 *Exemple connu Optical Center avril 2019* (utilisateur sans privilège !) : 
@@ -402,7 +409,7 @@ On remarquera l'instruction de journalisation (_logger_) de l'action malveillant
 
 Très utile pour analyser des attaques silencieuses.
 
-La généralisation de journalisation de toutes actions illégales est à envisager (_zero trust_)
+La généralisation de journalisation de toutes actions illégales est à envisager (<<zero-trust>>)
 
 --
 

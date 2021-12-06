@@ -13,7 +13,7 @@ Les exemples de Evil User Stories (<<EvilUS>>) présentés ici, sont tirés de t
 
 Pour ceux qui souhaitent reconduire cette expérience très exactement, voici le lien vers le projet : https://ocapuozzo.github.io/mission-etl-csv/  (libre utilisation). Compter minimum 3 semaines de travail étudiant, couvrant toutes les plages de TP info, plus un temps certain de travail à domicile (première semaine des vacances de Toussaint, par exemple)
 
-
+[[resume]]
 == Résumé
 
 
@@ -21,17 +21,31 @@ La cybersécurité en développement logiciel (défense) nécessite un esprit d'
 
 Enseigner la cybersécurité à BAC+2, à des débutants, c'est accompagner l'étudiant sur le chemin de l'expérience et en même temps l'éclairer à la fois sur les bonnes pratiques et les usages déviants.
 
-Pour autant, l'étudiant a tendance à se focaliser principalement sur la consolidation de connaissances informatiques nouvelles (comprendre la technologie, mettre au point l'application) laissant malheureusement peu de place à l'étude de bonnes pratiques et des usages mal intentionnés. Normal, car ces études ont comme prérequis une bonne dose d'expérience...
+Pour autant, l'étudiant a tendance à se focaliser principalement sur la consolidation de connaissances techniques nouvelles (comprendre la technologie, mettre au point l'application) laissant une moindre place à l'étude de bonnes pratiques et des usages mal intentionnés. Normal, car ces études ont comme prérequis une bonne dose d'expérience...
 
 .Expérience 
 image::etudiant-apprentissage.jpg[caption="",title="l'expérience prime",alt="expérience prime"]
 
 
-.Un constat
-L'étude des risques cyber, tout comme celle des tests unitaires, est *discriminante* dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l'application). Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n'ont pas été en mesure de produire, dans les temps imposés, de scénarios d'utilisateurs malveillants, en cette année covid 2021-2022). 
+L'étude des risques cyber, tout comme celle des tests unitaires, est discriminante dans la mesure où elle induit un travail et un recul sur un réel construit et opérationnel (l'application). 
+
+////
+Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n'ont pas été en mesure de produire, dans les temps imposés, de scénarios d'utilisateurs malveillants, en cette année covid 2021-2022). 
+////
 
 L'accès à ce type de formation est ainsi clairement monté en exigence, et va dans le sens des attendus de professionnels du secteur. (https://www.lemonde.fr/blog/binaire/2015/11/05/la-culture-de-la-cybersecurite/). 
 
 À nous, enseignants, de relever le défi de sensibiliser l'ensemble de nos étudiants aux risques liés à la cybersécurité, et aux actions pour en minimiser l'impact.
 
+
+
+[sidebar]
+.Conclusion
+--
+L'ANSII préconise d'intégrer les risques cyber dès le début d'un projet. C'est ce que nous avons tenté de faire, en intégrant la recherche, par l'étudiant, de scénarios d'usages malveillants et de contre-mesures dès la conception des premières briques de leur application. 
+
+Cette pratique s'avère payante car elle sensibilise l'étudiant à la fois aux risques en cybersécurité et à sa part de responsabilité dans ce domaine. 
+
+Nous avons décidé de la gnéraliser sur l'ensemble des projets menés par les étudiants.   
+--
 
