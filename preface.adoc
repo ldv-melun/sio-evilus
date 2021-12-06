@@ -44,8 +44,6 @@ L'accès à ce type de formation est ainsi clairement monté en exigence, et va 
 --
 L'ANSII préconise d'intégrer les risques cyber dès le début d'un projet. C'est ce que nous avons tenté de faire, en intégrant la recherche, par l'étudiant, de scénarios d'usages malveillants et de contre-mesures dès la conception des premières briques de leur application. 
 
-Cette pratique s'avère payante car elle sensibilise l'étudiant à la fois aux risques en cybersécurité et à sa part de responsabilité dans ce domaine. 
-
-Nous avons décidé de la gnéraliser sur l'ensemble des projets menés par les étudiants.   
+Cette pratique s'avère payante car elle sensibilise l'étudiant à la fois aux risques en cybersécurité et à sa part de responsabilité dans ce domaine. Nous avons décidé de la généraliser sur l'ensemble des projets menés par les étudiants.   
 --
 
