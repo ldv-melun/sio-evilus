@@ -12,11 +12,18 @@ Seule la proposition de la team _Tournesol_ n'est pas une proposition d'étudian
 
 Il existe de la part de l'étudiant une tendance certaine à rechercher systématiquement une solution à tout problème sur internet. Normal, car on leur a toujours dit que l'on trouve (de) tout sur internet :)), rendant difficile, pour l'apprenant, de distinguer ce qui est du ressort d'une solution logique à construire - avec les moyens sous la main - d'une recherche d'une solution toute faite. 
 
-NOTE: Par exemple le projet demande une fusion sélective très particulière de deux fichiers CSV, et quelques étudiants ne se sont pas contentés d'un exemple de code de lecture/écriture d'un tel fichier, cherchant de longues heures une solution de fusion clé en main sur le net...
+NOTE: Par exemple le projet demande une fusion sélective très particulière de deux fichiers CSV, et quelques étudiants ne se sont pas contentés d'un exemple de code de lecture/écriture d'un tel fichier, cherchant durant de longs moments une solution de fusion clé en main sur le net...
 
-Dans la même veine, suivre un tutoriel n'est pas de l'expérience, mais aller au delà, c'est à dire *comprendre ce qui a été réalisé*, l'*adapter à un projet*, l'*étendre* sur la base d'une *idée d'amélioration* ou *créer de nouvelles fonctionnalités*, oui. L'expérience forge la créativité et inversement.
+Dans la même veine, suivre un tutoriel n'est pas de l'expérience, mais aller au delà, c'est à dire *comprendre ce qui a été réalisé*, l'*adapter à un projet*, l'*étendre* sur la base d'une *idée d'amélioration* ou *créer de nouvelles fonctionnalités*, oui. L'expérience forge la créativité et inversement. 
 
-Cette piste de réflexion nous amène à penser que nous gagnerons à tendre davantage vers la créativité des étudiants, essentielle en cybersécurité.
+La recheche par l'étudiant de scénarios d'usages déviants, et leur contre-mesure, participe au développement de sa créativité. C'est une dimension que nous, professeurs, avons décidé de prendre en compte dans les évaluations. 
+
+Enfin, pour compléter cette étude, il est utile de signaler que certains étudiants (un peu moins d'un tiers) n'ont pas été en mesure de réaliser le travail demandé. Leur capacité à transposer des savoir faire, leur niveau d'implication, n'ont pas été suffisants pour atteindre les objectifs fixés.
+
+
+////
+Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n'ont pas été en mesure de produire, dans les temps imposés, de scénarios d'utilisateurs malveillants, en cette année covid 2021-2022). 
+////
 
 
 <<resume>>
