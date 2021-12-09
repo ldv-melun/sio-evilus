@@ -4,19 +4,19 @@ endif::[]
 
 == Conclusion
 
-Cette première expérimentation (première année d'examen du nouveau référentiel SIO) a permi de mesurer la difficulté à enseigner les principes de cybersécurité à des débutants en programmation. Les propositions d'étudiants présentées ici ont, en partie, été reformulées, mais restent relativement fidèles à leur version originale. 
+Cette première expérimentation (première année d'examen du nouveau référentiel SIO) a permis de mesurer la difficulté à enseigner les principes de cybersécurité à des débutants en programmation. Les propositions d'étudiants présentées ici ont, en partie, été reformulées, mais restent relativement fidèles à leur version originale. 
 
-Seule la proposition de la team _Tournesol_ n'est pas une proposition d'étudiant (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l'utilisateur). Malgré le fait que le cas _Optical Center_ ait été évoqué en cours, la faiblesse du code généré par le module _maker_ d'authentification dans sa version d'octobre 2021 n'a pas fait objet d'une contre-mesure. Nous pensons que cette proposition n'a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un temps de recul basé sur une expérience en devenir. 
+Seule la proposition de la team _Tournesol_ n'est pas une proposition d'étudiant (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l'utilisateur). Malgré le fait que le cas _Optical Center_ ait été évoqué en cours, la faiblesse du code généré par le module _maker_ d'authentification dans sa version d'octobre 2021 n'a pas fait l'objet d'une contre-mesure. Nous pensons que cette proposition n'a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un temps de recul basé sur une expérience en devenir. 
 
 === Qualité de l'expérience
 
-Il existe dela part de l'étudiant une tendance certaine à rechercher systématiquement une solution à tout problème sur internet. Normal, car on leur a toujours dit que l'on trouve (de) tout sur internet :)), rendant difficile, pour l'apprenant, de distinguer ce qui est du ressort d'une solution logique à construire - avec les moyens sous la main - d'une recherche d'une solution toute faite. 
+Il existe de la part de l'étudiant une tendance certaine à rechercher systématiquement une solution à tout problème sur internet. Normal, car on leur a toujours dit que l'on trouve (de) tout sur internet :)), rendant difficile, pour l'apprenant, de distinguer ce qui est du ressort d'une solution logique à construire - avec les moyens sous la main - d'une recherche d'une solution toute faite. 
 
 NOTE: Par exemple le projet demande une fusion sélective très particulière de deux fichiers CSV, et quelques étudiants ne se sont pas contentés d'un exemple de code de lecture/écriture d'un tel fichier, cherchant de longues heures une solution de fusion clé en main sur le net...
 
 Dans la même veine, suivre un tutoriel n'est pas de l'expérience, mais aller au delà, c'est à dire *comprendre ce qui a été réalisé*, l'*adapter à un projet*, l'*étendre* sur la base d'une *idée d'amélioration* ou *créer de nouvelles fonctionnalités*, oui. L'expérience forge la créativité et inversement.
 
-En tant que professeur, nous devrions orienter nos évaluations sur ces points, en favorisant la créativité, essentielle en cybersécurité.
+Cette piste de réflexion nous amène à penser que nous gagnerons à tendre davantage vers la créativité des étudiants, essentielle en cybersécurité.
 
 
 <<resume>>

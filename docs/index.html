@@ -430,7 +430,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#truepreface">1. Preface</a></li>
 <li><a href="#resume">2. Résumé</a></li>
-<li><a href="#trueune-s-lection-d-evil-user-stories-propos-s-pas-les-tudiants">3. Une sélection d&#8217;Evil User Stories proposés pas les étudiants</a>
+<li><a href="#trueune-s-lection-d-evil-user-stories-propos-s-par-les-tudiants">3. Une sélection d&#8217;Evil User Stories proposés par les étudiants</a>
 <ul class="sectlevel2">
 <li><a href="#trueteam-em-le-nain-et-l-chelle-em">3.1. Team :  <em>Le nain et l'échelle</em></a></li>
 <li><a href="#trueteam-em-les-pas-d-id-em">3.2. Team : <em>Les Pas d&#8217;ID</em></a></li>
@@ -508,7 +508,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueune-s-lection-d-evil-user-stories-propos-s-pas-les-tudiants"><a class="anchor" href="#trueune-s-lection-d-evil-user-stories-propos-s-pas-les-tudiants"></a>3. Une sélection d&#8217;Evil User Stories proposés pas les étudiants</h2>
+<h2 id="trueune-s-lection-d-evil-user-stories-propos-s-par-les-tudiants"><a class="anchor" href="#trueune-s-lection-d-evil-user-stories-propos-s-par-les-tudiants"></a>3. Une sélection d&#8217;Evil User Stories proposés par les étudiants</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="trueteam-em-le-nain-et-l-chelle-em"><a class="anchor" href="#trueteam-em-le-nain-et-l-chelle-em"></a>3.1. Team :  <em>Le nain et l'échelle</em></h3>
@@ -524,7 +524,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Concept de contre-mesure</strong> :  <a href="#moindre-privilege">[moindre-privilege]</a></p>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure</strong> : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d&#8217;accéderà d&#8217;autres bases de données sur le même serveur.
+<p><strong>Contre-mesure</strong> : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d&#8217;accéder à d&#8217;autres bases de données sur le même serveur.
 Pour cela avec <code>phpMyAdmin</code> je crée ce nouvel utilisateur comme ceci:</p>
 </div>
 <div class="imageblock">
@@ -562,7 +562,7 @@ Pour cela avec <code>phpMyAdmin</code> je crée ce nouvel utilisateur comme ceci
 <div class="content">
 <div class="title">Evil User Story 2</div>
 <div class="paragraph">
-<p>En tant que personne malveillante, je cherche accéder à certaines pages sans authentification, dans le but d&#8217;avoir accès aux actions et aux données permises à certains rôles seulement.</p>
+<p>En tant que personne malveillante, je cherche à accéder à certaines pages sans authentification, dans le but d&#8217;avoir accès aux actions et aux données permises à certains rôles seulement.</p>
 </div>
 </div>
 </div>
@@ -605,7 +605,7 @@ class UploadController extends AbstractController</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Ainsi, toutes ses méthodes contrôleur seront accessibles qu&#8217;aux seules utilisateur ayant le <code>ROLE_GESTIONNAIRE</code>.</p>
+<p>Ainsi, toutes ses méthodes contrôleur seront accessibles qu&#8217;aux seuls utilisateurs ayant le <code>ROLE_GESTIONNAIRE</code>.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -679,7 +679,7 @@ class UploadController extends AbstractController</code></pre>
 <p><strong>Concept de contre-mesure</strong> : Menaces <a href="#DDoS">[DDoS]</a> à intégrer dans le plan de mise en production.</p>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure</strong> : En tant que développeur pour empêcher les attaques dos je m&#8217;assure que l&#8217;application n&#8217;utilise des composants sujets à de telles attaques et je me sers des protections mis a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)</p>
+<p><strong>Contre-mesure</strong> : En tant que développeur pour empêcher les attaques dos je m&#8217;assure que l&#8217;application n&#8217;utilise pas de composants sujets à de telles attaques et je me sers des protections mises a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -749,7 +749,7 @@ Votre Service client OVHcloud</pre>
 <p><strong>Contre-mesure</strong> : En tant que développeur, afin d&#8217;empêcher les personnes malveillantes qui souhaitent, à partir de la barre d&#8217;adresse, accéder aux différentes routes de l&#8217;application Vetux-Line sans être connecté.</p>
 </div>
 <div class="paragraph">
-<p>Les méthodes contrôleur de la classe <code>IndexController</code> sont annotatiée par <code>@IsGranted("ROLE_ADMIN")</code>. Cette annotation permet de restreindre l&#8217;accès à tous les utilisateurs qui ne sont pas connecté ou qui ne possède pas le rôle <code>ROLE_ADMIN</code> aux différentes routes du controller. La personne malveillante, en essayant de se connecter à la route admin/fusion par exemple, ne va pas pouvoir y accéder, car elle sera directement redirigée sur la page de connexion.</p>
+<p>Les méthodes contrôleur de la classe <code>IndexController</code> sont annotées par <code>@IsGranted("ROLE_ADMIN")</code>. Cette annotation permet de restreindre l&#8217;accès à tous les utilisateurs qui ne sont pas connecté ou qui ne possède pas le rôle <code>ROLE_ADMIN</code> aux différentes routes du controller. La personne malveillante, en essayant de se connecter à la route admin/fusion par exemple, ne va pas pouvoir y accéder, car elle sera directement redirigée sur la page de connexion.</p>
 </div>
 <div class="paragraph">
 <p>Vidéo de démonstration : <a href="https://youtu.be/DO1L1NVX6XI" class="bare">https://youtu.be/DO1L1NVX6XI</a></p>
@@ -915,7 +915,7 @@ Votre Service client OVHcloud</pre>
 <p><strong>Justification</strong>: En effet, plusieurs études (<a href="https://www.cyclonis.com/fr/rapport-83-pour-cent-utilisateurs-interroges-utilisent-meme-mot-de-passe-plusieurs-sites/" class="bare">https://www.cyclonis.com/fr/rapport-83-pour-cent-utilisateurs-interroges-utilisent-meme-mot-de-passe-plusieurs-sites/</a> ou <a href="https://www.zdnet.fr/actualites/mot-de-passe-1-personne-sur-7-n-en-utilise-qu-un-seul-partout-39829024.htm" class="bare">https://www.zdnet.fr/actualites/mot-de-passe-1-personne-sur-7-n-en-utilise-qu-un-seul-partout-39829024.htm</a> et bien d’autres..) démontrent que les personnes utilisent souvent le même mot de passe un peu partout.</p>
 </div>
 <div class="paragraph">
-<p><strong>Contre-mesure</strong> : En tant que développeur, si jamais une grosse fuite de données arriverait à se produire, j’ai sécurisé la base de données en chiffrant tous les mots de passe pour éviter de réutiliser les mots de passe des utilisateurs.</p>
+<p><strong>Contre-mesure</strong> : En tant que développeur, si jamais une grosse fuite de données se produit, je sécurise la base de données en chiffrant tous les mots de passe pour éviter de réutiliser les mots de passe des utilisateurs.</p>
 </div>
 <div class="paragraph">
 <p>J’ai donc haché le mot de passe des utilisateurs par l&#8217;intermédiaire du module de sécurité de Symfony, en particulier :</p>
@@ -935,7 +935,7 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 <div class="content">
 <div class="title">Evil User Story 9</div>
 <div class="paragraph">
-<p>En tant que utilisateur malveillant si j&#8217;arrive à accèder à des données d&#8217;autres utilisatueurs de même privilège, je peux alors aspirer leurs données en vue d&#8217;exploitations illégales, ou pire, endommager les données pour discréditer le service.</p>
+<p>En tant qu&#8217;utilisateur malveillant si j&#8217;arrive à accèder à des données d&#8217;autres utilisatueurs de même privilège, je peux alors aspirer leurs données en vue d&#8217;exploitations illégales, ou pire, endommager les données pour discréditer le service.</p>
 </div>
 </div>
 </div>
@@ -1048,15 +1048,15 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 <h2 id="trueconclusion"><a class="anchor" href="#trueconclusion"></a>4. Conclusion</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cette première expérimentation (première année d&#8217;examen du nouveau référentiel SIO) a permi de mesurer la difficulté à enseigner les principes de cybersécurité à des débutants en programmation. Les propositions d'étudiants présentées ici ont, en partie, été reformulées, mais restent relativement fidèles à leur version originale.</p>
+<p>Cette première expérimentation (première année d&#8217;examen du nouveau référentiel SIO) a permis de mesurer la difficulté à enseigner les principes de cybersécurité à des débutants en programmation. Les propositions d'étudiants présentées ici ont, en partie, été reformulées, mais restent relativement fidèles à leur version originale.</p>
 </div>
 <div class="paragraph">
-<p>Seule la proposition de la team <em>Tournesol</em> n&#8217;est pas une proposition d'étudiant (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l&#8217;utilisateur). Malgré le fait que le cas <em>Optical Center</em> ait été évoqué en cours, la faiblesse du code généré par le module <em>maker</em> d&#8217;authentification dans sa version d&#8217;octobre 2021 n&#8217;a pas fait objet d&#8217;une contre-mesure. Nous pensons que cette proposition n&#8217;a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un temps de recul basé sur une expérience en devenir.</p>
+<p>Seule la proposition de la team <em>Tournesol</em> n&#8217;est pas une proposition d'étudiant (Evil User Story n°9, gestion des données du profil utilisateur contrôlée uniquement sur le rôle de l&#8217;utilisateur). Malgré le fait que le cas <em>Optical Center</em> ait été évoqué en cours, la faiblesse du code généré par le module <em>maker</em> d&#8217;authentification dans sa version d&#8217;octobre 2021 n&#8217;a pas fait l&#8217;objet d&#8217;une contre-mesure. Nous pensons que cette proposition n&#8217;a pas été retenue par les étudiants de par sa relative complexité, qui nécessite un temps de recul basé sur une expérience en devenir.</p>
 </div>
 <div class="sect2">
 <h3 id="truequalit-de-l-exp-rience"><a class="anchor" href="#truequalit-de-l-exp-rience"></a>4.1. Qualité de l&#8217;expérience</h3>
 <div class="paragraph">
-<p>Il existe dela part de l'étudiant une tendance certaine à rechercher systématiquement une solution à tout problème sur internet. Normal, car on leur a toujours dit que l&#8217;on trouve (de) tout sur internet :)), rendant difficile, pour l&#8217;apprenant, de distinguer ce qui est du ressort d&#8217;une solution logique à construire - avec les moyens sous la main - d&#8217;une recherche d&#8217;une solution toute faite.</p>
+<p>Il existe de la part de l'étudiant une tendance certaine à rechercher systématiquement une solution à tout problème sur internet. Normal, car on leur a toujours dit que l&#8217;on trouve (de) tout sur internet :)), rendant difficile, pour l&#8217;apprenant, de distinguer ce qui est du ressort d&#8217;une solution logique à construire - avec les moyens sous la main - d&#8217;une recherche d&#8217;une solution toute faite.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1074,7 +1074,7 @@ Par exemple le projet demande une fusion sélective très particulière de deux 
 <p>Dans la même veine, suivre un tutoriel n&#8217;est pas de l&#8217;expérience, mais aller au delà, c&#8217;est à dire <strong>comprendre ce qui a été réalisé</strong>, l'<strong>adapter à un projet</strong>, l'<strong>étendre</strong> sur la base d&#8217;une <strong>idée d&#8217;amélioration</strong> ou <strong>créer de nouvelles fonctionnalités</strong>, oui. L&#8217;expérience forge la créativité et inversement.</p>
 </div>
 <div class="paragraph">
-<p>En tant que professeur, nous devrions orienter nos évaluations sur ces points, en favorisant la créativité, essentielle en cybersécurité.</p>
+<p>Cette piste de réflexion nous amène à penser que nous gagnerons à tendre davantage vers la créativité des étudiants, essentielle en cybersécurité.</p>
 </div>
 <div class="paragraph">
 <p><a href="#resume">Résumé</a></p>
@@ -1136,7 +1136,7 @@ source : <a href="https://www.ovh.com/fr/anti-ddos/mitigation.xml" class="bare">
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-06 11:19:49 CET
+Last updated 2021-12-09 11:51:02 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

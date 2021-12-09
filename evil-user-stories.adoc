@@ -1,6 +1,6 @@
 :imagesdir: images
 
-== Une sélection d'Evil User Stories proposés pas les étudiants
+== Une sélection d'Evil User Stories proposés par les étudiants
 
 
 === Team :  _Le nain et l'échelle_
@@ -15,7 +15,7 @@ En tant que personne malveillante, je souhaite obtenir les données de connexion
 *Concept de contre-mesure* :  <<moindre-privilege>>
 
 
-*Contre-mesure* : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d'accéderà d'autres bases de données sur le même serveur. 
+*Contre-mesure* : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d'accéder à d'autres bases de données sur le même serveur. 
 Pour cela avec `phpMyAdmin` je crée ce nouvel utilisateur comme ceci:
 
 image::phpmyadmin-create-user.png[]
@@ -41,7 +41,7 @@ Préférez une console d'administration, connexion en `SSH`,  directement sur le
 [sidebar]
 .Evil User Story 2
 --
-En tant que personne malveillante, je cherche accéder à certaines pages sans authentification, dans le but d'avoir accès aux actions et aux données permises à certains rôles seulement.
+En tant que personne malveillante, je cherche à accéder à certaines pages sans authentification, dans le but d'avoir accès aux actions et aux données permises à certains rôles seulement.
 --
 
 *Concept de contre-mesure* : <<moindre-privilege>>
@@ -78,7 +78,7 @@ class UploadController extends AbstractController
 
 ----
 
-Ainsi, toutes ses méthodes contrôleur seront accessibles qu'aux seules utilisateur ayant le `ROLE_GESTIONNAIRE`. 
+Ainsi, toutes ses méthodes contrôleur seront accessibles qu'aux seuls utilisateurs ayant le `ROLE_GESTIONNAIRE`. 
 
 [sidebar]
 .Evil User Story 3
@@ -138,7 +138,7 @@ En tant qu’utilisateur malveillant je veux empecher l’accès au site en fais
 *Concept de contre-mesure* : Menaces <<DDoS>> à intégrer dans le plan de mise en production.
 
 
-*Contre-mesure* : En tant que développeur pour empêcher les attaques dos je m'assure que l'application n'utilise des composants sujets à de telles attaques et je me sers des protections mis a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)
+*Contre-mesure* : En tant que développeur pour empêcher les attaques dos je m'assure que l'application n'utilise pas de composants sujets à de telles attaques et je me sers des protections mises a disposition par les hébergeurs (mécanisme de filtrage en bordure de réseau par exemple)
 
 
 .Exemple hébergeur OVH (présenté par l'enseignant)
@@ -198,7 +198,7 @@ En tant que personne malveillante, je veux utiliser la barre d'adresse afin d'av
 
 *Contre-mesure* : En tant que développeur, afin d'empêcher les personnes malveillantes qui souhaitent, à partir de la barre d'adresse, accéder aux différentes routes de l'application Vetux-Line sans être connecté.
 
-Les méthodes contrôleur de la classe `IndexController` sont annotatiée par `@IsGranted("ROLE_ADMIN")`. Cette annotation permet de restreindre l'accès à tous les utilisateurs qui ne sont pas connecté ou qui ne possède pas le rôle `ROLE_ADMIN` aux différentes routes du controller. La personne malveillante, en essayant de se connecter à la route admin/fusion par exemple, ne va pas pouvoir y accéder, car elle sera directement redirigée sur la page de connexion.
+Les méthodes contrôleur de la classe `IndexController` sont annotées par `@IsGranted("ROLE_ADMIN")`. Cette annotation permet de restreindre l'accès à tous les utilisateurs qui ne sont pas connecté ou qui ne possède pas le rôle `ROLE_ADMIN` aux différentes routes du controller. La personne malveillante, en essayant de se connecter à la route admin/fusion par exemple, ne va pas pouvoir y accéder, car elle sera directement redirigée sur la page de connexion.
 
 Vidéo de démonstration : https://youtu.be/DO1L1NVX6XI
 
@@ -316,7 +316,7 @@ En tant que personne malveillante si j'arrive à extraire les données des utili
 *Justification*: En effet, plusieurs études (https://www.cyclonis.com/fr/rapport-83-pour-cent-utilisateurs-interroges-utilisent-meme-mot-de-passe-plusieurs-sites/ ou https://www.zdnet.fr/actualites/mot-de-passe-1-personne-sur-7-n-en-utilise-qu-un-seul-partout-39829024.htm et bien d’autres..) démontrent que les personnes utilisent souvent le même mot de passe un peu partout.
  
 
-*Contre-mesure* : En tant que développeur, si jamais une grosse fuite de données arriverait à se produire, j’ai sécurisé la base de données en chiffrant tous les mots de passe pour éviter de réutiliser les mots de passe des utilisateurs.
+*Contre-mesure* : En tant que développeur, si jamais une grosse fuite de données se produit, je sécurise la base de données en chiffrant tous les mots de passe pour éviter de réutiliser les mots de passe des utilisateurs.
 
 J’ai donc haché le mot de passe des utilisateurs par l'intermédiaire du module de sécurité de Symfony, en particulier :
 
@@ -330,14 +330,13 @@ Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 ----
 
 
-
 === Team : _Tournesol_
 
 
 [sidebar]
 .Evil User Story 9
 --
-En tant que utilisateur malveillant si j'arrive à accèder à des données d'autres utilisatueurs de même privilège, je peux alors aspirer leurs données en vue d'exploitations illégales, ou pire, endommager les données pour discréditer le service.  
+En tant qu'utilisateur malveillant si j'arrive à accèder à des données d'autres utilisatueurs de même privilège, je peux alors aspirer leurs données en vue d'exploitations illégales, ou pire, endommager les données pour discréditer le service.  
 --
 
 *Concepts de contre-mesure* : <<defense-en-profondeur>>, <<zero-trust>>, <<moindre-privilege>>
