@@ -18,12 +18,7 @@ Dans la même veine, suivre un tutoriel n'est pas de l'expérience, mais aller a
 
 La recheche par l'étudiant de scénarios d'usages déviants, et leur contre-mesure, participe au développement de sa créativité. C'est une dimension que nous, professeurs, avons décidé de prendre en compte dans les évaluations. 
 
-Enfin, pour compléter cette étude, il est utile de signaler que certains étudiants (un peu moins d'un tiers) n'ont pas été en mesure de réaliser le travail demandé. Leur capacité à transposer des savoir faire, leur niveau d'implication, n'ont pas été suffisants pour atteindre les objectifs fixés.
-
-
-////
-Elle creuse ainsi le fossé entre les étudiants acteurs de leur formation et ceux qui la subissent (1/3 des étudiants n'ont pas été en mesure de produire, dans les temps imposés, de scénarios d'utilisateurs malveillants, en cette année covid 2021-2022). 
-////
+Enfin, il est utile de signaler qu'un tiers environ de nos étudiants n'ont pas été en mesure de réaliser le travail demandé. Leur capacité à transposer des savoir faire, leur niveau d'implication, n'ont pas été suffisants pour atteindre les objectifs fixés.
 
 
 <<resume>>

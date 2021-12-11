@@ -12,7 +12,7 @@
 En tant que personne malveillante, je souhaite obtenir les données de connexion à la base de données utilisée par l'application Vetux-Line, en vue d'exploiter des données d'autres bases de données hébergées sur le même serveur que Vetux-Line.
 --
 
-*Concept de contre-mesure* :  <<moindre-privilege>>
+*Concept de contre-mesure* :  <<moindre-privilege>>, <<reduction-de-la-surface-d-attaque>>
 
 
 *Contre-mesure* : En tant que développeur, je vais créer un identifiant de base de données spécialement pour la base de données de Vetux-Line pour empêcher un utilisateur malveillant d'accéder à d'autres bases de données sur le même serveur. 
@@ -80,6 +80,8 @@ class UploadController extends AbstractController
 
 Ainsi, toutes ses méthodes contrôleur seront accessibles qu'aux seuls utilisateurs ayant le `ROLE_GESTIONNAIRE`. 
 
+
+
 [sidebar]
 .Evil User Story 3
 --
@@ -93,7 +95,6 @@ En tant que personne malveillante, je veux uploader des fichiers pour faire plan
 //// 
 https://github.com/asciidocfx/AsciidocFX/issues/226 
 ////
-
 
 [source, php, numbered]
 ----
@@ -124,7 +125,6 @@ L'extension informe sur le contenu d'un fichier mais ne le garantit pas. Constat
 
 D'autre part, la limite de la taille maximale des fichiers autorisés est également à considérer. Généralement sous la forme d'un paramètre du service HTTP en amont.
 ====
-
 
 
 === Team : _Les Pas d'ID_
